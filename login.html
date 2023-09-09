@@ -16,45 +16,49 @@
             <a class = "navbar-item" href="signin.html">Sign In</a>
         </nav>
         <main>
+            <div class = "banner boxShadow content">
+                <h1>Chromatic Aberration</h1>
+                <i>Compromise in making quality games</i>
+            </div>
         <!-- https://enlear.academy/31-example-login-form-for-website-42abc6f6d525 -->
-        <div style = "position: absolute; top: 550px; inline-size: 90%; margin-inline: auto; max-inline-size: 20rem; left: 37%;">
-            <form method="POST" style="display: grid; gap: 20px;">
+            <div>
+                <form method="POST" style="display: grid; gap: 20px;">
 
-                <div style = "display: flex;">
-                    <label for="login__username"><svg style = "block-size: 1em; display: inline-block; fill: #fff; inline-size: 1em; vertical-align: middle;">
-                        <use xlink:href="#icon-user"></use>
-                        </svg><span style = "border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px;">Username</span></label>
-                    <input autocomplete="username" id="login__username" type="text" name="username" style = "flex: 1; border-radius: 20px; padding: 1rem;" placeholder="Username" required>
-                </div>
+                    <div style = "display: flex;">
+                        <label for="login__username"><svg style = "block-size: 1em; display: inline-block; fill: #fff; inline-size: 1em; vertical-align: middle;">
+                            <use xlink:href="#icon-user"></use>
+                            </svg><span style = "border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px;">Username</span></label>
+                        <input autocomplete="username" id="login__username" type="text" name="username" style = "flex: 1; border-radius: 20px; padding: 1rem;" placeholder="Username" required>
+                    </div>
 
-                <div style = "display: flex;">
-                    <label for="login__password"><svg style = "block-size: 1em; display: inline-block; fill: #fff; inline-size: 1em; vertical-align: middle;">
-                        <use xlink:href="#icon-lock"></use>
-                        </svg><span style = "border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px;">Password</span></label>
-                    <input id="login__password" type="password" name="password" style = "flex: 1; border-radius: 20px; padding: 1rem;" placeholder="Password" required>
-                </div>
+                    <div style = "display: flex;">
+                        <label for="login__password"><svg style = "block-size: 1em; display: inline-block; fill: #fff; inline-size: 1em; vertical-align: middle;">
+                            <use xlink:href="#icon-lock"></use>
+                            </svg><span style = "border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px;">Password</span></label>
+                        <input id="login__password" type="password" name="password" style = "flex: 1; border-radius: 20px; padding: 1rem;" placeholder="Password" required>
+                    </div>
 
-                <div style = "display: flex;">
-                    <input type="submit" value="Log In" style = "cursor: pointer; background-color: #a30020; font-weight: 700; text-transform: uppercase; border-bottom-left-radius: 0; border-top-left-radius: 0; width: 20rem; padding: 1rem; border-radius: 10px; font-family: Arial; font-size: 20px; color: #f0f0f0;">
-                </div>
+                    <div style = "display: flex;">
+                        <input type="submit" value="Log In" style = "cursor: pointer; background-color: #a30020; font-weight: 700; text-transform: uppercase; border-bottom-left-radius: 0; border-top-left-radius: 0; width: 20rem; padding: 1rem; border-radius: 10px; font-family: Arial; font-size: 20px; color: #f0f0f0;">
+                    </div>
 
-            </form>
+                </form>
 
-            <p style = "text-align: center;">Not a member? <a href="signin.html" style = "color: #f80000; outline: 0; text-decoration: none;">Sign up now</a> <svg style = "block-size: 1em; display: inline-block; fill: #fff; inline-size: 1em; vertical-align: middle;">
-                <use xlink:href="#icon-arrow-right"></use>
-                </svg></p>
-        </div>
-        <svg xmlns="http://www.w3.org/2000/svg" style = "display: none;">
-            <symbol id="icon-arrow-right" viewBox="0 0 1792 1792">
-                <path d="M1600 960q0 54-37 91l-651 651q-39 37-91 37-51 0-90-37l-75-75q-38-38-38-91t38-91l293-293H245q-52 0-84.5-37.5T128 1024V896q0-53 32.5-90.5T245 768h704L656 474q-38-36-38-90t38-90l75-75q38-38 90-38 53 0 91 38l651 651q37 35 37 90z" />
-            </symbol>
-            <symbol id="icon-lock" viewBox="0 0 1792 1792">
-                <path d="M640 768h512V576q0-106-75-181t-181-75-181 75-75 181v192zm832 96v576q0 40-28 68t-68 28H416q-40 0-68-28t-28-68V864q0-40 28-68t68-28h32V576q0-184 132-316t316-132 316 132 132 316v192h32q40 0 68 28t28 68z" />
-            </symbol>
-            <symbol id="icon-user" viewBox="0 0 1792 1792">
-                <path d="M1600 1405q0 120-73 189.5t-194 69.5H459q-121 0-194-69.5T192 1405q0-53 3.5-103.5t14-109T236 1084t43-97.5 62-81 85.5-53.5T538 832q9 0 42 21.5t74.5 48 108 48T896 971t133.5-21.5 108-48 74.5-48 42-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zm-320-893q0 159-112.5 271.5T896 896 624.5 783.5 512 512t112.5-271.5T896 128t271.5 112.5T1280 512z" />
-            </symbol>
-        </svg>
+                <p style = "text-align: center;">Not a member? <a href="signin.html" style = "color: #f80000; outline: 0; text-decoration: none;">Sign up now</a> <svg style = "block-size: 1em; display: inline-block; fill: #fff; inline-size: 1em; vertical-align: middle;">
+                    <use xlink:href="#icon-arrow-right"></use>
+                    </svg></p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" style = "display: none;">
+                <symbol id="icon-arrow-right" viewBox="0 0 1792 1792">
+                    <path d="M1600 960q0 54-37 91l-651 651q-39 37-91 37-51 0-90-37l-75-75q-38-38-38-91t38-91l293-293H245q-52 0-84.5-37.5T128 1024V896q0-53 32.5-90.5T245 768h704L656 474q-38-36-38-90t38-90l75-75q38-38 90-38 53 0 91 38l651 651q37 35 37 90z" />
+                </symbol>
+                <symbol id="icon-lock" viewBox="0 0 1792 1792">
+                    <path d="M640 768h512V576q0-106-75-181t-181-75-181 75-75 181v192zm832 96v576q0 40-28 68t-68 28H416q-40 0-68-28t-28-68V864q0-40 28-68t68-28h32V576q0-184 132-316t316-132 316 132 132 316v192h32q40 0 68 28t28 68z" />
+                </symbol>
+                <symbol id="icon-user" viewBox="0 0 1792 1792">
+                    <path d="M1600 1405q0 120-73 189.5t-194 69.5H459q-121 0-194-69.5T192 1405q0-53 3.5-103.5t14-109T236 1084t43-97.5 62-81 85.5-53.5T538 832q9 0 42 21.5t74.5 48 108 48T896 971t133.5-21.5 108-48 74.5-48 42-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zm-320-893q0 159-112.5 271.5T896 896 624.5 783.5 512 512t112.5-271.5T896 128t271.5 112.5T1280 512z" />
+                </symbol>
+            </svg>
         </main>
         <footer>
             <img class = "footerLogo" src = "./src/logolight.png" alt = "Chromatic Aberration Logo" width = "200px"/>
@@ -68,7 +72,7 @@
                 <h3>Contact Us</h3>
                 <a href = "#">Terms of Use</a>
                 <a href = "#">Privacy Policy</a>
-                <a href = "#">Learn More</a>
+                <a href = "learnmore.html">Learn More</a>
             </div>
             <div class = "footerNetworkingLogo flexcolumn alignitemcenter">
                 <a target = "_blank" href = "https://www.youtube.com/@aberracioncromatica771"><img src = "./src/youtube.png" height = "50px"/></a>

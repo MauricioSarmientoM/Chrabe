@@ -16,150 +16,52 @@
             <a class = "navbar-item" href="signin.html">Sign In</a>
         </nav>
         <main>
-        <div style = "position: absolute; display: block; top: 550px; left: 20%; width: 60%; height: 1000px; background-color: rgba(10, 10, 10, 0.7); border-radius: 0px 25px 0px 25px;  box-shadow: 16px 16px 4px rgba(0, 0, 0, .75)">
-            <form action = "" method = "post">
-                <table style = "position: absolute; width: 95%; height: 90%; left: 2.5%; padding-top: 5%">
-                    <tr>
-                        <td style = "width: 33%; text-align: center;">
-                            <label for = "nameinput">Name</label>
-                        </td>
-                        <td>
-                            <input id = "nameinput" type = "text" name = "name" style = "width: 80%;"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style = "width: 33%; text-align: center;">
-                            <label for = "surnameinput" style = "color: #f0f0f0; font-family: Arial; font-size: 20px;">Surname</label>
-                        </td>
-                        <td>
-                            <input id = "surnameinput" type = "text" name = "surname" style = "width: 80%;"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style = "width: 33%; text-align: center;">
-                            <label for = "userinput" style = "color: #f0f0f0; font-family: Arial; font-size: 20px;">User Name</label>
-                        </td>
-                        <td>
-                            <input id = "userinput" type = "text" name = "username" style = "width: 80%;"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style = "width: 33%; text-align: center;">
-                            <label for = "passwordinput" style = "color: #f0f0f0; font-family: Arial; font-size: 20px;">Password</label>
-                        </td>
-                        <td>
-                            <input id = "passwordinput" type = "password" name = "password" style = "width: 80%;"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style = "width: 33%; text-align: center;">
-                            <label for = "emailinput" style = "color: #f0f0f0; font-family: Arial; font-size: 20px;">Email</label>
-                        </td>
-                        <td>
-                            <input id = "emailinput" type = "email" name = "email" style = "width: 80%;"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style = "width: 33%; text-align: center;">
-                            <label for = "dateinput" style = "color: #f0f0f0; font-family: Arial; font-size: 20px;">Birth Date</label>
-                        </td>
-                        <td>
-                            <input id = "dateinput" type = "date" name = "birthday" style = "width: 80%;"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style = "width: 33%; text-align: center;">
-                            <label for = "ageinput" style = "color: #f0f0f0; font-family: Arial; font-size: 20px;">Age</label>
-                        </td>
-                        <td>
-                            <input id = "ageinput" type = "number" name = "age" style = "width: 80%;"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style = "width: 33%; text-align: center;">
-                            <label style = "color: #f0f0f0; font-family: Arial; font-size: 20px;">Sex</label>
-                        </td>
-                        <td>
-                            <fieldset style = "width: 75%;  text-align: center;">
-                                <legend>Choose your prefered sex</legend>
-                                <table style = "width: 100%;">
-                                    <tr>
-                                        <td>
-                                            <input type = "radio" id = "womancheck" name = "sex">
-                                        </td>
-                                        <td>
-                                            <label for = "womancheck">Woman</label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type = "radio" id = "mancheck" name = "sex">
-                                        </td>
-                                        <td>
-                                            <label for = "mancheck">Man</label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type = "radio" id = "normalcheck" name = "sex">
-                                        </td>
-                                        <td>
-                                            <label for = "normalcheck">Normal</label>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </fieldset>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style = "width: 33%; text-align: center;">
-                            <label>Interests</label>
-                        </td>
-                        <td>
-                            <fieldset style = "width: 75%;  text-align: center;">
-                                <legend>Choose your interests</legend>
-                                <table style = "width: 100%;">
-                                    <tr>
-                                        <td>
-                                            <input type = "checkbox" id = "roboticcheck" name = "interests">
-                                        </td>
-                                        <td>
-                                            <label for = "roboticcheck">Robotic</label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type = "checkbox" id = "aicheck" name = "interests">
-                                        </td>
-                                        <td>
-                                            <label for = "aicheck">AI</label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type = "checkbox" id = "developmentcheck" name = "interests">
-                                        </td>
-                                        <td>
-                                            <label for = "developmentcheck">Development</label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type = "checkbox" id = "dataanalysischeck" name = "interests">
-                                        </td>
-                                        <td>
-                                            <label for = "dataanalysischeck">Data Analysis</label>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </fieldset>
-                        </td>
-                    </tr>
-                </table>
-                <input type = "reset" style = "position: absolute; left: 15%; bottom: 40px; width: 30%; height: 40px; background-color: #101010; color: #f0f0f0; border-style: none; border-radius: 10px; font-family: Arial; font-size: 20px; cursor: pointer; box-shadow: 8px 8px 4px rgba(0, 0, 0, .75)" value = "Reset"/>
-                <input type = "submit" style = "position: absolute; left: 55%; bottom: 40px; width: 30%; height: 40px; background-color: #101010; color: #f0f0f0; border-style: none; border-radius: 10px; font-family: Arial; font-size: 20px; cursor: pointer; box-shadow: 8px 8px 4px rgba(0, 0, 0, .75)" value = "Sign In"/>
-            </form>
-        </div>
+            <div class = "banner boxShadow content">
+                <h1>Chromatic Aberration</h1>
+                <i>Compromise in making quality games</i>
+            </div>
+            <div class = "content transBG boxShadow">
+                <form action = "" method = "post">
+                    <label for = "nameinput">Name</label>
+                    <input id = "nameinput" type = "text" name = "name" style = "width: 80%;"/>
+                    <label for = "surnameinput" style = "color: #f0f0f0; font-family: Arial; font-size: 20px;">Surname</label>
+                    <input id = "surnameinput" type = "text" name = "surname" style = "width: 80%;"/>
+                    <label for = "userinput" style = "color: #f0f0f0; font-family: Arial; font-size: 20px;">User Name</label>
+                    <input id = "userinput" type = "text" name = "username" style = "width: 80%;"/>
+                    <label for = "passwordinput" style = "color: #f0f0f0; font-family: Arial; font-size: 20px;">Password</label>
+                    <input id = "passwordinput" type = "password" name = "password" style = "width: 80%;"/>
+                    <label for = "emailinput" style = "color: #f0f0f0; font-family: Arial; font-size: 20px;">Email</label>
+                    <input id = "emailinput" type = "email" name = "email" style = "width: 80%;"/>
+                    <label for = "dateinput" style = "color: #f0f0f0; font-family: Arial; font-size: 20px;">Birth Date</label>
+                    <input id = "dateinput" type = "date" name = "birthday" style = "width: 80%;"/>
+                    <label for = "ageinput" style = "color: #f0f0f0; font-family: Arial; font-size: 20px;">Age</label>
+                    <input id = "ageinput" type = "number" name = "age" style = "width: 80%;"/>
+                    <label style = "color: #f0f0f0; font-family: Arial; font-size: 20px;">Sex</label>
+                    <fieldset style = "width: 75%;  text-align: center;">
+                        <legend>Choose your prefered sex</legend>
+                            <input type = "radio" id = "womancheck" name = "sex">
+                            <label for = "womancheck">Woman</label>
+                            <input type = "radio" id = "mancheck" name = "sex">
+                            <label for = "mancheck">Man</label>
+                            <input type = "radio" id = "normalcheck" name = "sex">
+                            <label for = "normalcheck">Normal</label>
+                    </fieldset>
+                    <label>Interests</label>
+                    <fieldset style = "width: 75%;  text-align: center;">
+                        <legend>Choose your interests</legend>
+                        <input type = "checkbox" id = "roboticcheck" name = "interests">
+                        <label for = "roboticcheck">Robotic</label>
+                        <input type = "checkbox" id = "aicheck" name = "interests">
+                        <label for = "aicheck">AI</label>
+                        <input type = "checkbox" id = "developmentcheck" name = "interests">
+                        <label for = "developmentcheck">Development</label>
+                        <input type = "checkbox" id = "dataanalysischeck" name = "interests">
+                        <label for = "dataanalysischeck">Data Analysis</label>
+                    </fieldset>
+                    <input type = "reset" style = "width: 30%; height: 40px; background-color: #101010; color: #f0f0f0; border-style: none; border-radius: 10px; font-family: Arial; font-size: 20px; cursor: pointer; box-shadow: 8px 8px 4px rgba(0, 0, 0, .75)" value = "Reset"/>
+                    <input type = "submit" style = "width: 30%; height: 40px; background-color: #101010; color: #f0f0f0; border-style: none; border-radius: 10px; font-family: Arial; font-size: 20px; cursor: pointer; box-shadow: 8px 8px 4px rgba(0, 0, 0, .75)" value = "Sign In"/>
+                </form>
+            </div>
         </main>
         <footer>
             <img class = "footerLogo" src = "./src/logolight.png" alt = "Chromatic Aberration Logo" width = "200px"/>
@@ -173,7 +75,7 @@
                 <h3>Contact Us</h3>
                 <a href = "#">Terms of Use</a>
                 <a href = "#">Privacy Policy</a>
-                <a href = "#">Learn More</a>
+                <a href = "learnmore.html">Learn More</a>   
             </div>
             <div class = "footerNetworkingLogo flexcolumn alignitemcenter">
                 <a target = "_blank" href = "https://www.youtube.com/@aberracioncromatica771"><img src = "./src/youtube.png" height = "50px"/></a>

@@ -145,6 +145,7 @@ a:hover { text-shadow: -2px 2px 0 rgba(255, 0, 0, .75), 2px -2px 0 rgba(0, 255, 
 .alignitemcenter { align-items: center}
 .justifyitemcenter { justify-items: center}
 .alignitemright { align-items: right}
+.transBG { background-color: var(--transBG); }
 .banner {
     display: flex;
     flex-direction: column;
