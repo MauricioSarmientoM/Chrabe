@@ -135,7 +135,12 @@ a {
     color: var(--mainText);
     transition: 0.3s ease-in-out;
 }
-a:hover { text-shadow: -2px 2px 0 rgba(255, 0, 0, .75), 2px -2px 0 rgba(0, 255, 255, .75); }
+
+a:focus,
+a:hover {
+    text-decoration: underline;
+    text-shadow: -2px 2px 0 rgba(255, 0, 0, .75), 2px -2px 0 rgba(0, 255, 255, .75);
+}
 .content { margin-bottom: 2rem; }
 .round { border-radius: 50%; }
 .inline { display: inline; }
