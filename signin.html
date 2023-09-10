@@ -7,6 +7,7 @@
         <link rel = "icon" href = "./src/chromaber.png" type = "image/png" />
         <link rel = "stylesheet" href = "./css/generalstyling.css"/>
         <link rel = "stylesheet" href = "./css/login.css"/>
+        <link rel = "stylesheet" href = "./css/signin.css"/>
         <title>Chromatic Aberration</title>
         <svg xmlns="http://www.w3.org/2000/svg" class="icons">
             <symbol id="icon-arrow-right" viewBox="0 0 1792 1792">
@@ -51,65 +52,65 @@
                 <form class = "flexcolumn form login" action = "" method = "post">
                     <div class="form__field">
                         <label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
-                        <input id = "nameinput" type = "text" name = "name" placeholder = "Name"/>
+                        <input id = "nameinput" type = "text" name = "name" placeholder = "Name" required/>
                     </div>
                     <div class="form__field">
-                        <label class = "asidelabel" for = "surnameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
-                        <input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname"/>
+                        <label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
+                        <input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" required/>
                     </div>
                     <div class="form__field">
                         <label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
-                        <input id = "userinput" type = "text" name = "username" placeholder = "Username"/>
+                        <input id = "userinput" type = "text" name = "username" placeholder = "Username" required/>
                     </div>
                     <div class="form__field">
                         <label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
-                        <input id = "passwordinput" type = "password" name = "password" placeholder = "Password"/>
+                        <input id = "passwordinput" type = "password" name = "password" placeholder = "Password" required/>
                     </div>
                     <div class="form__field">
                         <label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
-                        <input id = "emailinput" type = "email" name = "email" placeholder = "Email"/>
+                        <input id = "emailinput" type = "email" name = "email" placeholder = "Email" required/>
                     </div>
                     <div class="form__field">
                         <label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>
-                        <input id = "dateinput" type = "date" name = "birthday"/>
+                        <input id = "dateinput" type = "date" name = "birthday" required/>
                     </div>
                     <fieldset>
-                        <legend>Choose your prefered sex</legend>
-                        <div class="form__field">
-                            <input type = "radio" id = "womancheck" name = "sex">
-                            <label for = "womancheck">Woman</label>
-                        </div>
-                        <div class="form__field">
-                            <input type = "radio" id = "mancheck" name = "sex">
-                            <label for = "mancheck">Man</label>
-                        </div>
-                        <div class="form__field">
-                            <input type = "radio" id = "normalcheck" name = "sex">
-                            <label for = "normalcheck">Normal</label>
-                        </div>
+                        <legend>Choose your sex</legend>
+                        <label for = "womancheck" class = "flexrow option">
+                            <input type = "radio" id = "womancheck" name = "sex" required>
+                            <span class = "padding1rem">Woman</span>
+                        </label>
+                        <label for = "mancheck" class = "flexrow option">
+                            <input type = "radio" id = "mancheck" name = "sex" required>
+                            <span class = "padding1rem">Man</span>
+                        </label>
+                        <label for = "normalcheck" class = "flexrow option">
+                            <input type = "radio" id = "normalcheck" name = "sex" required>
+                            <span class = "padding1rem">Normal</span>
+                        </label>
                     </fieldset>
                     <fieldset>
                         <legend>Choose your interests</legend>
-                        <div class="form__field">
-                            <input type = "checkbox" id = "roboticcheck" name = "interests">
-                            <label for = "roboticcheck">Robotic</label>
-                        </div>
-                        <div class="form__field">
-                            <input type = "checkbox" id = "aicheck" name = "interests">
-                            <label for = "aicheck">AI</label>
-                        </div>
-                        <div class="form__field">
-                            <input type = "checkbox" id = "developmentcheck" name = "interests">
-                            <label for = "developmentcheck">Development</label>
-                        </div>
-                        <div class="form__field">
-                            <input type = "checkbox" id = "dataanalysischeck" name = "interests">
-                            <label for = "dataanalysischeck">Data Analysis</label>
-                        </div>
+                        <label for = "usercheck" class = "flexrow option">
+                            <input type = "checkbox" id = "usercheck" name = "interests">
+                            <span class = "padding1rem">Community User</span>
+                        </label>
+                        <label for = "betacheck" class = "flexrow option">
+                            <input type = "checkbox" id = "betacheck" name = "interests">
+                            <span class = "padding1rem">Beta Testing</span>
+                        </label>
+                        <label for = "devcheck" class = "flexrow option">
+                            <input type = "checkbox" id = "devcheck" name = "interests">
+                            <span class = "padding1rem">Development</span>
+                        </label>
+                        <label for = "collcheck" class = "flexrow option">
+                            <input type = "checkbox" id = "collcheck" name = "interests">
+                            <span class = "padding1rem">Collaborator</span>
+                        </label>
                     </fieldset>
                     <input type = "submit" value = "Sign In"/>
                 </form>
-                <p class="text--center">Already have an account? <a href="signin.html"><i>Log in now</i></a> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></p>
+                <p class="text--center">Already have an account? <a href="login.html"><i>Log in now</i></a> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></p>
             </div>
         </main>
         <footer>

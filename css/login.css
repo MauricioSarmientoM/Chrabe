@@ -88,7 +88,7 @@ input[type="reset"]{
 
 .asidelabel {
   background-color: var(--loginLabelBackgroundColor);
-  border-radius: 0.25rem, 0, 0, 5px;
+  border-radius: 0.25rem 0 0 0.25rem;
   padding: 1rem;
 }
 
@@ -140,7 +140,7 @@ input[type="reset"]{
 .login input[type="submit"]:hover {
     color: var(--loginSubmitHoverColor);
     background-color: var(--loginSubmitHoverBackgroundColor);
-    box-shadow: -3px 3px 0 #f00, 3px -3px 0 #0ff;
+    box-shadow: -5px 5px 0 rgba(255, 0, 0, .75), 5px -5px 0 rgba(0, 255, 255, .75);
 }
 
 .text--center {

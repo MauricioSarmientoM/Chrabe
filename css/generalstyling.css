@@ -151,6 +151,7 @@ a:hover {
 .justifyitemcenter { justify-items: center}
 .alignitemright { align-items: right}
 .transBG { background-color: var(--transBG); }
+.rotate180 { transform: rotate(180deg); }
 .banner {
     display: flex;
     flex-direction: column;

@@ -1,0 +1,18 @@
+:root{
+    --mainBG: #303030;
+    --mainText: #f0f0f0;
+    --transBG: rgba(10, 10, 10, 0.7);
+    font-size: 20px;
+}
+
+.option {
+    padding: .25rem 0rem .25rem 2rem;
+    border-radius: .5rem;
+    transition: .3s;
+}
+
+.option:focus,
+.option:hover {
+    background-color: var(--transBG);
+}
+.padding1rem { padding-left: 1rem; }
