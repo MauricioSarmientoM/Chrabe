@@ -5,3 +5,8 @@
     font-size: 20px;
 }
 
+.rightimg {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+}
