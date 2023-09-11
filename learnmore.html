@@ -6,8 +6,22 @@
         <meta name = "description" content = "Chromatic Aberration main page. Get to know the last new about our games and updates, Talk with the comumnity and share moments!"/>
         <link rel = "icon" href = "./src/chromaber.png" type = "image/png" />
         <link rel = "stylesheet" href = "./css/generalstyling.css"/>
+        <link rel = "stylesheet" href = "./css/login.css"/>
         <link rel = "stylesheet" href = "./css/learnmore.css"/>
         <title>Chromatic Aberration</title>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icons">
+            <symbol id="icon-arrow-right" viewBox="0 0 1792 1792">
+                <path d="M1600 960q0 54-37 91l-651 651q-39 37-91 37-51 0-90-37l-75-75q-38-38-38-91t38-91l293-293H245q-52 0-84.5-37.5T128 1024V896q0-53 32.5-90.5T245 768h704L656 474q-38-36-38-90t38-90l75-75q38-38 90-38 53 0 91 38l651 651q37 35 37 90z" />
+            </symbol>
+            <symbol id = "icon-letter" viewBox="0 0 75.294 75.294">
+                <g>
+                    <path d="M66.097,12.089h-56.9C4.126,12.089,0,16.215,0,21.286v32.722c0,5.071,4.126,9.197,9.197,9.197h56.9 c5.071,0,9.197-4.126,9.197-9.197V21.287C75.295,16.215,71.169,12.089,66.097,12.089z M61.603,18.089L37.647,33.523L13.691,18.089 H61.603z M66.097,57.206h-56.9C7.434,57.206,6,55.771,6,54.009V21.457l29.796,19.16c0.04,0.025,0.083,0.042,0.124,0.065 c0.043,0.024,0.087,0.047,0.131,0.069c0.231,0.119,0.469,0.215,0.712,0.278c0.025,0.007,0.05,0.01,0.075,0.016 c0.267,0.063,0.537,0.102,0.807,0.102c0.001,0,0.002,0,0.002,0c0.002,0,0.003,0,0.004,0c0.27,0,0.54-0.038,0.807-0.102 c0.025-0.006,0.05-0.009,0.075-0.016c0.243-0.063,0.48-0.159,0.712-0.278c0.044-0.022,0.088-0.045,0.131-0.069 c0.041-0.023,0.084-0.04,0.124-0.065l29.796-19.16v32.551C69.295,55.771,67.86,57.206,66.097,57.206z"/>
+                </g>
+            </symbol>
+            <symbol id = "icon-half" viewBox="0 0 285.919 285.919">
+                <path d="M142.959,0C64.131,0,0,64.132,0,142.96c0,78.828,64.131,142.959,142.959,142.959c78.828,0,142.96-64.131,142.96-142.959 C285.919,64.132,221.787,0,142.959,0z M142.959,260.919V142.96V25c65.043,0,117.96,52.917,117.96,117.96 C260.919,208.003,208.002,260.919,142.959,260.919z"/>
+            </symbol>
+        </svg>
 	</head>
 	<body>
         <nav class = "boxShadow">
@@ -20,23 +34,95 @@
                 <h1>Chromatic Aberration</h1>
                 <i>Compromise in making quality games</i>
             </div>
-            <div class = "presgrid">
-                <h2>Who we are</h2>
-                <p>
+            <div class = "presgrid content boxShadow">
+                <h2 class = "title">Who we are</h2>
+                <p class = "article">
                     Chromatic Aberration is small organization from Chile full with <i>hopes</i> and <i>dreams</i>, focused in making videogames. The last 6 years, the team has been working on <i>polish</i> and <i>improve</i> their abilities, whether are informatic or artistic skills.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque scelerisque cursus aliquam. Aliquam neque magna, pellentesque non nunc sit amet, sodales tristique massa. In purus arcu, congue eget leo facilisis, finibus sagittis sapien. Sed tristique cursus luctus. Morbi tristique tellus vitae convallis dictum. Duis vitae libero elementum, tincidunt tellus sed, gravida felis. In hac habitasse platea dictumst. Nam eget vulputate sapien, at hendrerit justo. Etiam scelerisque magna eget nibh hendrerit vestibulum. In pellentesque venenatis est at sodales. Vivamus non suscipit nunc. Nunc non malesuada lacus. Mauris quis nibh mi. Donec sit amet est cursus, tincidunt urna sed, semper leo. Maecenas egestas finibus massa.
                 </p>
-                <aside>
+                <aside class = "crom card flexcolumn alignitemcenter">
                     <image class = "rightimg" src = "./src/abercroma.jpg"/>
                     <article>
                         <i>Aberración Cromática</i> was the first try of going outside and show our works to the world.
                     </article>
                 </aside>
-                <aside>
+                <aside class = "octan card flexcolumn alignitemcenter">
                     <image class = "rightimg" src = "./src/octan.png"/>
                     <article>
                         <i>Octa(n)</i> is a parallel project in an attempt of making useful tools for the everyday people.
                     </article>
                 </aside>
+            </div>
+            <div class = "content width100 flexrow">
+                <a class = "transBG card flexcolumn alignitemcenter marginleftauto marginrightauto" href = "https://twitter.com/TwimBlarkMe">
+                    <image class = "rightimg" src = "./src/twim.jpg"/>
+                    <span>Twim Blark Me</span>
+                </a>
+                <a class = "transBG card flexcolumn alignitemcenter marginleftauto marginrightauto" href = "https://twitter.com/hyperstrident20">
+                    <image class = "rightimg" src = "./src/hyperstrident.png"/>
+                    <span>Hyper Strident</span>
+                </a>
+                <a class = "transBG card flexcolumn alignitemcenter marginleftauto marginrightauto" href = "https://twitter.com/SpectrumSelf">
+                    <image class = "rightimg" src = "./src/ss.jpg"/>
+                    <span>Self Spectrum</span>
+                </a>
+            </div>
+            <div class = "content width100 flexrow transBG boxShadow">
+                <p class = "padding4rem">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a fermentum nibh. Donec ac sapien et velit consectetur viverra nec non est. Donec ac orci at neque malesuada eleifend in non tellus. Ut ultricies pretium dolor ornare dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a eros ut magna blandit semper. Praesent non justo a ante eleifend porta eu ornare ipsum. Integer a eros quis felis porttitor egestas vitae nec elit. Praesent et enim eleifend, euismod elit a, malesuada dui. Nam et luctus magna. Duis ut risus est.
+                </p>
+                <p class = "padding4rem">
+                    Morbi tempor tincidunt lacus, ac vestibulum nisl suscipit sit amet. Maecenas lectus nisl, lacinia sit amet nibh non, lobortis egestas urna. Morbi pretium, sem eget molestie eleifend, diam quam elementum eros, ac vehicula odio nulla sed turpis. Vestibulum sollicitudin, diam vitae porta laoreet, magna turpis dapibus urna, at feugiat felis erat eu dui. Praesent ultricies volutpat velit id aliquet. Duis bibendum auctor dui, quis dictum lacus posuere vel. Nam ante tellus, efficitur pellentesque massa eget, egestas ornare tellus. Cras mattis finibus leo, id lacinia odio consequat eget.
+                </p>
+            </div>
+            <div class = "content width100 flexrow transBG boxShadow">
+                <image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
+                <image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
+                <image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
+                <image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
+                <image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
+            </div>
+            <div class = "width100 flexrow transBG alignitemcenter">
+                <div class="mapouter padding2rem">
+                    <div class="gmap_canvas">
+                        <iframe class="gmap_iframe round1rem" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=400&amp;height=400&amp;hl=en&amp;q=Universidad of Atacama&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                        <a href="https://gachanymph.com/">Gacha Nymph Download</a>
+                    </div>
+                </div>
+                <form action = "" method="POST" class="form login padding2rem">
+                    <div class="form__field">
+                        <label class = "asidelabel" for="name"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
+                        <input autocomplete="name" id="name" type="text" name="name" class="form__input" placeholder="Name" required>
+                    </div>
+                    <div class="form__field">
+                        <label class = "asidelabel" for="login__password"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
+                        <input id="email" type="email" name="email" class="form__input" placeholder="Email" required>
+                    </div>
+                    <div class="form__field">
+                        <label class = "asidelabel" for="issue"><svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg><span class="hidden">Issue</span></label>
+                        <input id="issue" type="text" name="issue" class="form__input" placeholder="Issue" required>
+                    </div>
+                    <div class="form__field">
+                        <input type="textarea" name="message" class="form__input" placeholder="Message" required>
+                    </div>
+                    <div class="form__field">
+                        <input type="submit" value="Send">
+                    </div>
+                </form>
+                <div class = "flexcolumn alignitemcenter">
+                    <div class = "flexrow alignitemcenter">
+                        <img class = "padding1rem" src = "./src/gmail.png" width = "100px"/>
+                        <span>chromaber@gmail.com</span>
+                    </div>
+                    <div class = "flexrow alignitemcenter">
+                        <img class = "padding1rem" src = "./src/maps.webp" width = "100px"/>
+                        <span>Universidad de Atacama</span>
+                    </div>
+                    <div class = "flexrow alignitemcenter">
+                        <img class = "padding1rem" src = "./src/tele.png" width = "100px"/>
+                        <span>@SelfSpectrum</span>
+                    </div>
+                </div>
             </div>
         </main>
         <footer>

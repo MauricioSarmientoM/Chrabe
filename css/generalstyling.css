@@ -141,15 +141,23 @@ a:hover {
     text-decoration: underline;
     text-shadow: -2px 2px 0 rgba(255, 0, 0, .75), 2px -2px 0 rgba(0, 255, 255, .75);
 }
+.width100 { width: 100% }
+.padding1rem { padding: 1rem }
+.padding2rem { padding: 2rem }
+.padding4rem { padding: 4rem }
 .content { margin-bottom: 2rem; }
 .round { border-radius: 50%; }
+.round1rem { border-radius: 1rem; }
 .inline { display: inline; }
 .boxShadow { box-shadow: 8px 8px 4px rgba(0, 0, 0, .75); }
 .flexcolumn { display: flex; flex-direction: column; }
 .flexrow { display: flex; }
 .alignitemcenter { align-items: center}
 .justifyitemcenter { justify-items: center}
+.justifycontentcenter { justify-content: center}
 .alignitemright { align-items: right}
+.marginleftauto{ margin-left: auto }
+.marginrightauto{ margin-right: auto }
 .transBG { background-color: var(--transBG); }
 .rotate180 { transform: rotate(180deg); }
 .banner {
