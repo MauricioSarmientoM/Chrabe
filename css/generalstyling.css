@@ -25,6 +25,10 @@ h3 {
     font-size: 2rem;
     text-shadow: -1px 1px 0 rgba(255, 0, 0, .75), 1px -1px 0 rgba(0, 255, 255, .75);
 }
+h4 {
+    font-size: 2rem;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, .75);
+}
 i {
     text-shadow: 0 0 0 rgba(255, 0, 0, .75), 0 0 0 rgba(0, 255, 255, .75);
             animation: detail 2s 4s infinite;
