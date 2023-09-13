@@ -2,28 +2,143 @@
     --mainBG: #303030;
     --mainText: #f0f0f0;
     --transBG: rgba(10, 10, 10, 0.7);
+    
+    --color1: #600;
+    --color2: #066;
+    --color3: #666;
+    --colorbg1: #300;
+    --colorbg2: #033;
+    --colorbg3: #333;
     font-size: 20px;
 }
 
-.maingrid {
-    display: grid;
-    grid-template-areas: "visualdisplay visualdisplay visualdisplay" "articletitle articletitle articletitle" "article article article";
-    align-items: center;
-    justify-items: center;
-    gap: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+.whoare {
+    background-color: var(--cologbg1);
+            animation: 4s infinite alternate whoarewe;
+       -moz-animation: 4s infinite alternate whoarewe;
+    -webkit-animation: 4s infinite alternate whoarewe;
+         -o-animation: 4s infinite alternate whoarewe;
 }
-.visualdisplay: {
-    grid-area: visualdisplay;
+/* Animation Keyframes*/
+@keyframes whoarewe {
+    0% { background-color: var(--colorbg1); }
+    50% { background-color: var(--colorbg2); }
+    100% { background-color: var(--colorbg3); }
 }
 
-.articletitle: {
-    grid-area: articletitle;
+@-moz-keyframes whoarewe {
+    0% { background-color: var(--colorbg1); }
+    50% { background-color: var(--colorbg2); }
+    A100% { background-color: var(--colorbg3); }
 }
-.article: {
-    grid-area: article;
+
+@-webkit-keyframes whoarewe {
+    0% { background-color: var(--colorbg1); }
+    50% { background-color: var(--colorbg2); }
+    100% { background-color: var(--colorbg3); }
 }
+
+@-o-keyframes whoarewe {
+    0% { background-color: var(--colorbg1); }
+    50% { background-color: var(--colorbg2); }
+    100% { background-color: var(--colorbg3); }
+}
+
+.animation {
+    height: 4rem;
+    width: 100%;
+    overflow:hidden;
+}
+
+.animation > div > div {
+    padding: .5rem 2rem;
+    height: 5rem;
+    width: 100%;
+    margin-bottom: 3.5rem;
+    display:inline-block;
+}
+
+.animation div:first-child {
+            animation: text-animation 8s infinite;
+       -moz-animation: text-animation 8s infinite;
+    -webkit-animation: text-animation 8s infinite;
+         -o-animation: text-animation 8s infinite;
+}
+
+.first div {
+    background-color: var(--color1);
+}
+.second div {
+    background-color: var(--color2);
+}
+.third div {
+    background-color: var(--color3);
+}
+
+@keyframes text-animation {
+    0% {margin-top: -.5rem;}
+    10% {margin-top: -.5rem;}
+    20% {margin-top: -4.75rem;}
+    30% {margin-top: -4.75rem;}
+    40% {margin-top: -11rem;}
+    60% {margin-top: -11rem;}
+    70% {margin-top: -4.75rem;}
+    80% {margin-top: -4.75rem;}
+    90% {margin-top: -.5rem;}
+    100% {margin-top: -.5rem;}
+}
+
+@-moz-keyframes text-animation {
+    0% {margin-top: 0;}
+    10% {margin-top: 0;}
+    20% {margin-top: -4rem;}
+    30% {margin-top: -4rem;}
+    40% {margin-top: -8rem;}
+    60% {margin-top: -8rem;}
+    70% {margin-top: -4rem;}
+    80% {margin-top: -4rem;}
+    90% {margin-top: 0;}
+    A100% {margin-top: 0;}
+}
+
+@-webkit-keyframes text-animation {
+    0% {margin-top: 0;}
+    10% {margin-top: 0;}
+    20% {margin-top: -4rem;}
+    30% {margin-top: -4rem;}
+    40% {margin-top: -8rem;}
+    60% {margin-top: -8rem;}
+    70% {margin-top: -4rem;}
+    80% {margin-top: -4rem;}
+    90% {margin-top: 0;}
+    100% {margin-top: 0;}
+}
+
+@-o-keyframes text-animation {
+    0% {margin-top: 0;}
+    10% {margin-top: 0;}
+    20% {margin-top: -4rem;}
+    30% {margin-top: -4rem;}
+    40% {margin-top: -8rem;}
+    60% {margin-top: -8rem;}
+    70% {margin-top: -4rem;}
+    80% {margin-top: -4rem;}
+    90% {margin-top: 0;}
+    100% {margin-top: 0;}
+}
+
+.stuffgrid {
+    display: grid;
+    grid-template-areas: "stuff1 stuff2" "stuff3 stuff4";
+    align-items: center;
+    justify-items: center;
+}
+
+.stuff1 { grid-area: "stuff1" }
+.stuff2 { grid-area: "stuff2" }
+.stuff3 { grid-area: "stuff3" }
+.stuff4 { grid-area: "stuff4" }
+
 .newsgrid {
     display: grid;
     grid-template-areas: "newsimage newstitle" "newsimage newsarticle";
