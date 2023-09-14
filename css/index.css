@@ -3,45 +3,73 @@
     --mainText: #f0f0f0;
     --transBG: rgba(10, 10, 10, 0.7);
     
-    --color1: #600;
-    --color2: #066;
-    --color3: #666;
-    --colorbg1: #300;
-    --colorbg2: #033;
-    --colorbg3: #333;
+    --color1: #F75F1C;
+    --color2: #222;
+    --color3: #902EBB;
+    --colorbg1: #DB3103;
+    --colorbg2: #0a0a0a;
+    --colorbg3: #781E94;
     font-size: 20px;
 }
 
 .whoare {
     background-color: var(--cologbg1);
-            animation: 4s infinite alternate whoarewe;
-       -moz-animation: 4s infinite alternate whoarewe;
-    -webkit-animation: 4s infinite alternate whoarewe;
-         -o-animation: 4s infinite alternate whoarewe;
+            animation: 8s infinite whoarewe;
+       -moz-animation: 8s infinite whoarewe;
+    -webkit-animation: 8s infinite whoarewe;
+         -o-animation: 8s infinite whoarewe;
 }
 /* Animation Keyframes*/
 @keyframes whoarewe {
     0% { background-color: var(--colorbg1); }
-    50% { background-color: var(--colorbg2); }
-    100% { background-color: var(--colorbg3); }
+    10% { background-color: var(--colorbg1); }
+    20% { background-color: var(--colorbg2); }
+    30% { background-color: var(--colorbg2); }
+    40% { background-color: var(--colorbg3); }
+    60% { background-color: var(--colorbg3); }
+    70% { background-color: var(--colorbg2); }
+    80% { background-color: var(--colorbg2); }
+    90% { background-color: var(--colorbg1); }
+    100% { background-color: var(--colorbg1); }
 }
 
 @-moz-keyframes whoarewe {
     0% { background-color: var(--colorbg1); }
-    50% { background-color: var(--colorbg2); }
-    A100% { background-color: var(--colorbg3); }
+    10% { background-color: var(--colorbg1); }
+    20% { background-color: var(--colorbg2); }
+    30% { background-color: var(--colorbg2); }
+    40% { background-color: var(--colorbg3); }
+    60% { background-color: var(--colorbg3); }
+    70% { background-color: var(--colorbg2); }
+    80% { background-color: var(--colorbg2); }
+    90% { background-color: var(--colorbg1); }
+    A100% { background-color: var(--colorbg1); }
 }
 
 @-webkit-keyframes whoarewe {
     0% { background-color: var(--colorbg1); }
-    50% { background-color: var(--colorbg2); }
-    100% { background-color: var(--colorbg3); }
+    10% { background-color: var(--colorbg1); }
+    20% { background-color: var(--colorbg2); }
+    30% { background-color: var(--colorbg2); }
+    40% { background-color: var(--colorbg3); }
+    60% { background-color: var(--colorbg3); }
+    70% { background-color: var(--colorbg2); }
+    80% { background-color: var(--colorbg2); }
+    90% { background-color: var(--colorbg1); }
+    100% { background-color: var(--colorbg1); }
 }
 
 @-o-keyframes whoarewe {
     0% { background-color: var(--colorbg1); }
-    50% { background-color: var(--colorbg2); }
-    100% { background-color: var(--colorbg3); }
+    10% { background-color: var(--colorbg1); }
+    20% { background-color: var(--colorbg2); }
+    30% { background-color: var(--colorbg2); }
+    40% { background-color: var(--colorbg3); }
+    60% { background-color: var(--colorbg3); }
+    70% { background-color: var(--colorbg2); }
+    80% { background-color: var(--colorbg2); }
+    90% { background-color: var(--colorbg1); }
+    100% { background-color: var(--colorbg1); }
 }
 
 .animation {
