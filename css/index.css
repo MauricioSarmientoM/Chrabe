@@ -73,13 +73,13 @@
 }
 
 .animation {
-    height: 4rem;
+    height: 5rem;
     width: 100%;
     overflow:hidden;
 }
 
 .animation > div > div {
-    padding: .5rem 2rem;
+    padding: 1rem 0rem;
     height: 5rem;
     width: 100%;
     margin-bottom: 3.5rem;
@@ -104,55 +104,55 @@
 }
 
 @keyframes text-animation {
-    0% {margin-top: -.5rem;}
-    10% {margin-top: -.5rem;}
+    0% {margin-top: -.6rem;}
+    10% {margin-top: -.6rem;}
     20% {margin-top: -4.75rem;}
     30% {margin-top: -4.75rem;}
-    40% {margin-top: -11rem;}
-    60% {margin-top: -11rem;}
+    40% {margin-top: -11.6rem;}
+    60% {margin-top: -11.6rem;}
     70% {margin-top: -4.75rem;}
     80% {margin-top: -4.75rem;}
-    90% {margin-top: -.5rem;}
-    100% {margin-top: -.5rem;}
+    90% {margin-top: -.6rem;}
+    100% {margin-top: -.6rem;}
 }
 
 @-moz-keyframes text-animation {
-    0% {margin-top: 0;}
-    10% {margin-top: 0;}
-    20% {margin-top: -4rem;}
-    30% {margin-top: -4rem;}
-    40% {margin-top: -8rem;}
-    60% {margin-top: -8rem;}
-    70% {margin-top: -4rem;}
-    80% {margin-top: -4rem;}
-    90% {margin-top: 0;}
-    A100% {margin-top: 0;}
+    0% {margin-top: -.6rem;}
+    10% {margin-top: -.6rem;}
+    20% {margin-top: -4.75rem;}
+    30% {margin-top: -4.75rem;}
+    40% {margin-top: -11.6rem;}
+    60% {margin-top: -11.6rem;}
+    70% {margin-top: -4.75rem;}
+    80% {margin-top: -4.75rem;}
+    90% {margin-top: -.6rem;}
+    A100% {margin-top: -.6rem;}
 }
 
 @-webkit-keyframes text-animation {
-    0% {margin-top: 0;}
-    10% {margin-top: 0;}
-    20% {margin-top: -4rem;}
-    30% {margin-top: -4rem;}
-    40% {margin-top: -8rem;}
-    60% {margin-top: -8rem;}
-    70% {margin-top: -4rem;}
-    80% {margin-top: -4rem;}
-    90% {margin-top: 0;}
-    100% {margin-top: 0;}
+    0% {margin-top: -.6rem;}
+    10% {margin-top: -.6rem;}
+    20% {margin-top: -4.75rem;}
+    30% {margin-top: -4.75rem;}
+    40% {margin-top: -11.6rem;}
+    60% {margin-top: -11.6rem;}
+    70% {margin-top: -4.75rem;}
+    80% {margin-top: -4.75rem;}
+    90% {margin-top: -.6rem;}
+    100% {margin-top: -.6rem;}
 }
 
 @-o-keyframes text-animation {
-    0% {margin-top: 0;}
-    10% {margin-top: 0;}
-    20% {margin-top: -4rem;}
-    30% {margin-top: -4rem;}
-    40% {margin-top: -8rem;}
-    60% {margin-top: -8rem;}
-    70% {margin-top: -4rem;}
-    80% {margin-top: -4rem;}
-    90% {margin-top: 0;}
-    100% {margin-top: 0;}
+    0% {margin-top: -.6rem;}
+    10% {margin-top: -.6rem;}
+    20% {margin-top: -4.75rem;}
+    30% {margin-top: -4.75rem;}
+    40% {margin-top: -11.6rem;}
+    60% {margin-top: -11.6rem;}
+    70% {margin-top: -4.75rem;}
+    80% {margin-top: -4.75rem;}
+    90% {margin-top: -.6rem;}
+    100% {margin-top: -.6rem;}
 }
 
 .stuffgrid {
@@ -177,4 +177,13 @@
     height: 3rem;
     bottom: 7rem;
     margin-bottom: -6rem;
+}
+.img {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 3rem;
+}
+.splash {
+    background-image: linear-gradient(var(--mainBG), rgba(0, 0, 0, .5) 80%, var(--mainBG)), url("https://i.imgur.com/IwHRrbF.jpg");
+    background-size: 100%;
 }

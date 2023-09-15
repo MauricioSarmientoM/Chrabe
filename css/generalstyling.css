@@ -164,6 +164,8 @@ a:hover {
 .justifyitemcenter { justify-items: center}
 .justifycontentcenter { justify-content: center}
 .alignitemright { align-items: right}
+.aligntextleft { text-align: left }
+.aligntextcenter { text-align: center }
 .marginleftauto{ margin-left: auto }
 .marginrightauto{ margin-right: auto }
 .transBG { background-color: var(--transBG); }
