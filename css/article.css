@@ -5,8 +5,7 @@
 }
 
 .container {
-  max-width: 1120px;
-  margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .row {
@@ -19,9 +18,8 @@
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  color: #eee;
-  background-color: #009CD8;
-  border: 2px, #353535, solid;
+  color: #00F;
+  background-color: #F00;
 }
 @media screen and (min-width: 720px) {
   .col {
