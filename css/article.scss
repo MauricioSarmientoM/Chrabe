@@ -36,3 +36,23 @@ $max-width: 1120px;
   margin-top: 10px;
   @include cardStyle($light-grey, 2px,    $dark-colour, $bright-colour);
 }
+
+.stuffgrid {
+    @media screen and (min-width: $small) {
+        display: grid;
+        grid-template-areas: "stuff1 stuff2" "stuff3 stuff4";
+    }
+    @media screen and (min-width: 0px) and (max-width: $small) {
+        display: flex;
+        flex-direction: column;
+    }
+    align-items: center;
+    justify-items: center;
+    margin: 1rem;
+    gap: 1rem;
+}
+
+.stuff1 { grid-area: "stuff1" }
+.stuff2 { grid-area: "stuff2" }
+.stuff3 { grid-area: "stuff3" }
+.stuff4 { grid-area: "stuff4" }

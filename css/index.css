@@ -155,20 +155,6 @@
     100% {margin-top: -.7rem;}
 }
 
-.stuffgrid {
-    display: grid;
-    grid-template-areas: "stuff1 stuff2" "stuff3 stuff4";
-    align-items: center;
-    justify-items: center;
-    margin: 1rem;
-    gap: 1rem;
-}
-
-.stuff1 { grid-area: "stuff1" }
-.stuff2 { grid-area: "stuff2" }
-.stuff3 { grid-area: "stuff3" }
-.stuff4 { grid-area: "stuff4" }
-
 .subTitle {
     position: relative;
     background-color: var(--transBG);
