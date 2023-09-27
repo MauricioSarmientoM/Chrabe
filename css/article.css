@@ -1,0 +1,32 @@
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.col {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  color: #eee;
+  background-color: #009CD8;
+  border: 2px, #353535, solid;
+}
+@media screen and (min-width: 720px) {
+  .col {
+    width: 33%;
+  }
+}
+
+/*# sourceMappingURL=article.css.map */
