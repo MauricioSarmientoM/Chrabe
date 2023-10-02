@@ -11,7 +11,6 @@
 }
 
 h1 {
-    color: white;
     font-family: NewGlitch;
     font-size: 6rem;
     text-shadow: -4px 4px 0 rgba(255, 0, 0, .75), 4px -4px 0 rgba(0, 255, 255, .75);
@@ -63,17 +62,18 @@ i {
 }
 
 body {
-    background-color: var(--mainBG);
-    color: var(--mainText);
+    background-color: var(--mainBG) !important;
+    color: var(--mainText) !important;
     margin: 0;
     padding: 0;
     font-family: Arial;
 }
 nav {
-    position: fixed;
+    position: fixed !important;
     display: flex;
-    top: 0px;
-    left: 0px;
+    width: 100%;
+    top: 0px !important;
+    left: 0px !important;
     z-index: 10;
     height: 3rem;
 }
@@ -117,9 +117,9 @@ footer {
     margin-right: auto;
 }
 a {
-    text-decoration: none;
-    color: var(--mainText);
-    transition: 0.3s ease-in-out;
+    text-decoration: none !important;
+    color: var(--mainText) !important;
+    transition: 0.3s ease-in-out !important;
 }
 
 a:focus,
