@@ -173,3 +173,11 @@
     background-image: linear-gradient(var(--mainBG), rgba(0, 0, 0, .5) 80%, var(--mainBG)), url("https://i.imgur.com/IwHRrbF.jpg");
     background-size: 100%;
 }
+
+.carouselImg {
+    height: 20rem;
+    width: 100%;
+    /*background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)), url('../src/birthright.png');*/
+    background-size: 100%;
+    background-position: 25%;
+}
