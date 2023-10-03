@@ -115,72 +115,51 @@
 <i>Compromise in making quality games</i>
 </div-->
             <div class = "content">
-                <form class = "flexrow form login" action = "" method = "post">
-                    <div class = "flexcolumn">
-                        <div class="form__field">
-                            <label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
-                            <input id = "nameinput" type = "text" name = "name" placeholder = "Name" required/>
-                        </div>
-                        <div class="form__field">
-                            <label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
-                            <input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" required/>
-                        </div>
-                        <div class="form__field">
-                            <label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
-                            <input id = "userinput" type = "text" name = "username" placeholder = "Username" required/>
-                        </div>
-                        <div class="form__field">
-                            <label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
-                            <input id = "passwordinput" type = "password" name = "password" placeholder = "Password" required/>
-                        </div>
-                        <div class="form__field">
-                            <label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
-                            <input id = "emailinput" type = "email" name = "email" placeholder = "Email" required/>
-                        </div>
-                        <div class="form__field">
-                            <label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>
-                            <input id = "dateinput" type = "date" name = "birthday" required/>
-                        </div>
+                <form class = "flexcolumn form login padding1rem">
+                    <div class="form__field">
+                        <label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
+                        <input id = "nameinput" type = "text" name = "name" placeholder = "Name" required/>
                     </div>
-                    <div class = "flexcolumn">
-                        <fieldset>
-                            <legend>Choose your sex</legend>
-                            <label for = "womancheck" class = "flexrow option">
-                                <input type = "radio" id = "womancheck" name = "sex" required>
-                                <span class = "padding1rem">Woman</span>
-                            </label>
-                            <label for = "mancheck" class = "flexrow option">
-                                <input type = "radio" id = "mancheck" name = "sex" required>
-                                <span class = "padding1rem">Man</span>
-                            </label>
-                            <label for = "normalcheck" class = "flexrow option">
-                                <input type = "radio" id = "normalcheck" name = "sex" required>
-                                <span class = "padding1rem">Normal</span>
-                            </label>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Choose your interests</legend>
-                            <label for = "usercheck" class = "flexrow option">
-                                <input type = "checkbox" id = "usercheck" name = "interests">
-                                <span class = "padding1rem">Community Member</span>
-                            </label>
-                            <label for = "betacheck" class = "flexrow option">
-                                <input type = "checkbox" id = "betacheck" name = "interests">
-                                <span class = "padding1rem">Beta Testing</span>
-                            </label>
-                            <label for = "devcheck" class = "flexrow option">
-                                <input type = "checkbox" id = "devcheck" name = "interests">
-                                <span class = "padding1rem">Development</span>
-                            </label>
-                            <label for = "collcheck" class = "flexrow option">
-                                <input type = "checkbox" id = "collcheck" name = "interests">
-                                <span class = "padding1rem">Collaborator</span>
-                            </label>
-                        </fieldset>
+                    <div class="form__field">
+                        <label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
+                        <input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" required/>
                     </div>
-                    <input type = "submit" value = "Sign In"/>
+                    <div class="form__field">
+                        <label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
+                        <input id = "userinput" type = "text" name = "username" placeholder = "Username" required/>
+                    </div>
+                    <div class="form__field">
+                        <label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
+                        <input id = "passwordinput" type = "password" name = "password" placeholder = "Password" required/>
+                    </div>
+                    <div class="form__field">
+                        <label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
+                        <input id = "emailinput" type = "email" name = "email" placeholder = "Email" required/>
+                    </div>
+                    <div class="form__field">
+                        <label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>
+                        <input id = "dateinput" type = "date" name = "birthday" required/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sexSelect" class="form-label">Choose your sex</label>
+                        <select id="sexSelect" class="form-select">
+                            <option>Female</option>
+                            <option>Male</option>
+                            <option>Normal</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sexSelect" class="form-label">Choose your interests</label>
+                        <select id="sexSelect" class="form-select">
+                            <option>Community Member</option>
+                            <option>Beta Testing</option>
+                            <option>Development</option>
+                            <option>Collaborator</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <p class="text--center padding1rem">Already have an account? <a href="login.html"><i>Log in now</i></a> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></p>
                 </form>
-                <p class="text--center">Already have an account? <a href="login.html"><i>Log in now</i></a> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></p>
             </div>
         </main>
         <footer>
