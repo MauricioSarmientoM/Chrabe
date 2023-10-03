@@ -1,7 +1,7 @@
 :root{
     --mainBG: #303030;
     --mainText: #f0f0f0;
-    --transBG: rgba(10, 10, 10, 0.7);
+    --transBG: rgba(0, 0, 0, 0.7);
     font-size: 20px;
 }
 
@@ -11,23 +11,23 @@
 }
 
 h1 {
-    font-family: NewGlitch;
-    font-size: 6rem;
-    text-shadow: -4px 4px 0 rgba(255, 0, 0, .75), 4px -4px 0 rgba(0, 255, 255, .75);
+    font-family: NewGlitch !important;
+    font-size: 6rem !important;
+    text-shadow: -4px 4px 0 rgba(255, 0, 0, .75), 4px -4px 0 rgba(0, 255, 255, .75) !important;
 }
 h2 {
-    font-family: NewGlitch;
-    font-size: 4rem;
-    text-shadow: -2px 2px 0 rgba(255, 0, 0, .75), 2px -2px 0 rgba(0, 255, 255, .75);
+    font-family: NewGlitch !important;
+    font-size: 4rem !important;
+    text-shadow: -2px 2px 0 rgba(255, 0, 0, .75), 2px -2px 0 rgba(0, 255, 255, .75) !important;
 }
 h3 {
-    font-family: NewGlitch;
-    font-size: 2rem;
-    text-shadow: -1px 1px 0 rgba(255, 0, 0, .75), 1px -1px 0 rgba(0, 255, 255, .75);
+    font-family: NewGlitch !important;
+    font-size: 2rem !important;
+    text-shadow: -1px 1px 0 rgba(255, 0, 0, .75), 1px -1px 0 rgba(0, 255, 255, .75) !important;
 }
 h4 {
-    font-size: 2rem;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, .75);
+    font-size: 2rem !important;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, .75) !important;
 }
 i {
     text-shadow: 0 0 0 rgba(255, 0, 0, .75), 0 0 0 rgba(0, 255, 255, .75);
@@ -69,6 +69,7 @@ body {
     font-family: Arial;
 }
 nav {
+    /*background-color: var(--transBG) !important;*/
     position: fixed !important;
     display: flex;
     width: 100%;
@@ -81,6 +82,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 3rem;
 }   
 footer {
     display: grid;
@@ -160,4 +162,7 @@ a:hover {
     background-size: 100%;
     background-position: 25%;
     box-shadow: 8px 8px 4px rgba(0, 0, 0, .75);
+}
+.modal-backdrop {
+  z-index: -1 !important;
 }
