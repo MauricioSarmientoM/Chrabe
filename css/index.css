@@ -174,7 +174,13 @@
     background-size: 100%;
 }
 
-.carouselImg {
+
+.carousel-inner {
     height: 20rem;
     width: 100%;
+}
+.carouselImg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)), url('../src/birthright.png');
+    background-size: 100%;
+    background-position: 25%;
 }
