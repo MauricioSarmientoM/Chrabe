@@ -37,7 +37,7 @@
         </svg>
 	</head>
 	<body>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-dark bg-secondary navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <img class = "round" src = "./src/chromaber.png" alt = "Chromatic Aberration Logo" width = "40" height = "40"/>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,22 +48,17 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <!--li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown
                             </a>
-                            <script>
-                                $(document).ready(function(){
-                                    $('.dropdown-toggle').dropdown()
-                                });
-                            </script>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
-                        </li>
+                        </li-->
                     </ul>
                     <button type="button" class="buttonCh" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
                     <script>
@@ -97,6 +92,7 @@
                                                 <input type="submit" value="Log In">
                                             </div>
                                         </form>
+                                        <p class="text--center">Not a member? <a href="signin.html"><i>Sign in now</i></a> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></p>
                                     </div>
                                 </div>
                             </div>
@@ -106,10 +102,10 @@
             </div>
         </nav>
         <main>
-            <!--div class = "banner boxShadow content">
-<h1>Chromatic Aberration</h1>
-<i>Compromise in making quality games</i>
-</div-->
+            <div class = "banner boxShadow content">
+                <h1>Chromatic Aberration</h1>
+                <i>Compromise in making quality games</i>
+            </div>
             <div class = "content">
                 <form class = "flexcolumn form login padding1rem">
                     <div class="form__field">
