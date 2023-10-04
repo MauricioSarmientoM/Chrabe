@@ -37,74 +37,94 @@
         </svg>
 	</head>
 	<body>
-        <nav class="navbar navbar-dark bg-secondary navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <img class = "round" src = "./src/chromaber.png" alt = "Chromatic Aberration Logo" width = "40" height = "40"/>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <!--li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li-->
-                    </ul>
-                    <button type="button" class="buttonCh" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-                    <script>
-                        const myModal = document.getElementById('loginModal')
-                        const myInput = document.getElementById('login')
+        <!-- https://www.youtube.com/watch?v=biOMz4puGt8&t=328s&pp=ygUMZmlyZXNoaXAgY3Nz -->
+        <nav>
+            <ul class = "navbarNav">
+                <li class = "navbarItem">
+                    <a class = "navbarLink" href = "index.html">
+                        <span>
+                            <img class = "round" src = "./src/chromaber.png" alt = "Chromatic Aberration Logo" width = "60" height = "60"/>
+                        </span>
+                        <p class = "linkText">Home</p>
+                    </a>
+                </li>
+                <li class = "navbarItem" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    <a class = "navbarLink" href = "#">
+                        <span>
+                            <svg class="navbaricon"><use xlink:href="#icon-user"></use></svg>
+                        </span>
+                        <p class = "linkText">Login</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <script>
+            const myModal = document.getElementById('loginModal')
+            const myInput = document.getElementById('login')
 
-                        myModal.addEventListener('shown.bs.modal', () => {
-                            myInput.focus()
-                        })
-                    </script>
-                    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            myModal.addEventListener('shown.bs.modal', () => {
+                myInput.focus()
+            })
+        </script>
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- https://enlear.academy/31-example-login-form-for-website-42abc6f6d525 -->
+                        <div class="content">
+                            <form action = "" method="POST" class="form login">
+                                <div class="form__field">
+                                    <label class = "asidelabel" for="login__username"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
+                                    <input autocomplete="username" id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
                                 </div>
-                                <div class="modal-body">
-                                    <!-- https://enlear.academy/31-example-login-form-for-website-42abc6f6d525 -->
-                                    <div class="content">
-                                        <form action = "" method="POST" class="form login">
-                                            <div class="form__field">
-                                                <label class = "asidelabel" for="login__username"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
-                                                <input autocomplete="username" id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
-                                            </div>
-                                            <div class="form__field">
-                                                <label class = "asidelabel" for="login__password"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
-                                                <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
-                                            </div>
-                                            <div class="form__field">
-                                                <input type="submit" value="Log In">
-                                            </div>
-                                        </form>
-                                        <p class="text--center">Not a member? <a href="signin.html"><i>Sign in now</i></a> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></p>
-                                    </div>
+                                <div class="form__field">
+                                    <label class = "asidelabel" for="login__password"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
+                                    <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
                                 </div>
-                            </div>
+                                <div class="form__field">
+                                    <input type="submit" value="Log In">
+                                </div>
+                            </form>
+                            <p class="text--center">Not a member? <a href="signin.html"><i>Sign in now</i></a> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></p>
                         </div>
                     </div>
                 </div>
             </div>
-        </nav>
+        </div>
         <main>
-            <div class = "banner boxShadow content">
-                <h1>Chromatic Aberration</h1>
-                <i>Compromise in making quality games</i>
+            <div id="carouselCaptions" class="carousel slide carousel-fade boxShadow content" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./src/birthright.png" class="d-block carousel-img" alt="...">
+                        <div class="carousel-caption d-md-block">
+                            <h1 class = "white">Chromatic Aberration</h1>
+                            <p class = "white transBG">Working hard in bring the best quality.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./src/isaac.png" class="d-block carousel-img" alt="...">
+                        <div class="carousel-caption d-md-block">
+                            <h1 class = "white">Chromatic Aberration</h1>
+                            <p class = "white transBG">Total transparency and support when needed.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
             <div class = "content">
                 <form class = "flexcolumn form login padding1rem">
@@ -149,7 +169,7 @@
                             <option>Collaborator</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <input type="submit" value = "Submit"/>
                 </form>
             </div>
         </main>
