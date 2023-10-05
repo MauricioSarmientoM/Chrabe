@@ -150,7 +150,7 @@ footer {
 }
 .footerLogo {
     margin-top: auto;
-    margin-left: 2rem
+    margin-left: 2rem;
 }
 .footerDetails {
     margin-top: 2rem;
@@ -191,7 +191,8 @@ a:hover {
 .aligntextcenter { text-align: center }
 .marginleftauto{ margin-left: auto }
 .marginrightauto{ margin-right: auto }
-.transBG { background-color: var(--transBG); }
+.transBG { background-color: var(--transBG) !important; }
+.BG0 { background-color: rgba(0,0,0,0) !important; }
 .rotate180 { transform: rotate(180deg); }
 .white { color: var(--mainText) !important; }
 .modal-backdrop {
