@@ -41,3 +41,42 @@
     height: 10rem !important;
     object-fit: cover;
 }
+
+.presgrid {
+    background-color: var(--transBG);
+    display: grid;
+    padding: 2rem;
+    grid-template-areas: "title crom" "article octan";
+    column-gap: 3rem;
+    row-gap: 1rem;
+    align-items: center;
+}
+.title { grid-area: title; }
+.article {
+    grid-area: article;
+    text-align: justify;
+}
+.crom {
+    grid-area: crom;
+    background-color: var(--asideCyan);
+}
+.octan {
+    grid-area: octan;
+    background-color: var(--asideRed);
+}
+.inside-card {
+    width: 20rem;
+    border-radius: .5rem !important;
+    transition: 0.3s;
+    text-align: center;
+}
+.crom:hover,
+.crom:focus {
+    border-radius: 0;
+    background-color: var(--asideHoverCyan);
+}
+.octan:hover,
+.octan:focus {
+    border-radius: 0;
+    background-color: var(--asideHoverRed);
+}
