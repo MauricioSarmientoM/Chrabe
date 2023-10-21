@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en-US" data-bs-theme="dark">
-    <head>
+	<head>
         <meta charset = "utf-8"/>
         <meta name = "author" content = "Self Spectrum"/>
         <meta name = "description" content = "Chromatic Aberration main page. Get to know the last new about our games and updates, Talk with the comumnity and share moments!"/>
         <link rel = "icon" href = "./src/chromaber.png" type = "image/png" />
         <link rel = "stylesheet" href = "./css/generalstyling.css"/>
-        <link rel = "stylesheet" href = "./css/index.css"/>
-        <link rel = "stylesheet" href = "./css/article.css"/>
+        <link rel = "stylesheet" href = "./css/signin.css"/>
         <link rel = "stylesheet" href = "./node_modules/bootstrap/dist/css/bootstrap.min.css" />
         <script type = "text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <link rel = "stylesheet" href = "./css/login.css"/>
         <title>Chromatic Aberration</title>
         <svg xmlns="http://www.w3.org/2000/svg" class="icons">
-            <symbol id="icon-arrow-right" viewBox="0 0 1792 1792">
-                <path d="M1600 960q0 54-37 91l-651 651q-39 37-91 37-51 0-90-37l-75-75q-38-38-38-91t38-91l293-293H245q-52 0-84.5-37.5T128 1024V896q0-53 32.5-90.5T245 768h704L656 474q-38-36-38-90t38-90l75-75q38-38 90-38 53 0 91 38l651 651q37 35 37 90z" />
-            </symbol>
             <symbol id="icon-lock" viewBox="0 0 1792 1792">
                 <path d="M640 768h512V576q0-106-75-181t-181-75-181 75-75 181v192zm832 96v576q0 40-28 68t-68 28H416q-40 0-68-28t-28-68V864q0-40 28-68t68-28h32V576q0-184 132-316t316-132 316 132 132 316v192h32q40 0 68 28t28 68z" />
             </symbol>
             <symbol id="icon-user" viewBox="0 0 1792 1792">
                 <path d="M1600 1405q0 120-73 189.5t-194 69.5H459q-121 0-194-69.5T192 1405q0-53 3.5-103.5t14-109T236 1084t43-97.5 62-81 85.5-53.5T538 832q9 0 42 21.5t74.5 48 108 48T896 971t133.5-21.5 108-48 74.5-48 42-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zm-320-893q0 159-112.5 271.5T896 896 624.5 783.5 512 512t112.5-271.5T896 128t271.5 112.5T1280 512z" />
             </symbol>
-        </svg>
-        <script>
-            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-        </script>
-    </head>
-    <body>
+            <symbol id = "icon-cake" viewBox="0 0 24 24">
+                <path d="M20.8894 13V14H20.0194C19.2794 14 18.6794 14.6 18.6794 15.35V15.65C18.6794 16.4 18.0794 17 17.3294 17C16.5894 17 15.9894 16.4 15.9894 15.65V15.35C15.9894 14.6 15.3794 14 14.6394 14C13.8994 14 13.2994 14.6 13.2994 15.35V15.65C13.2994 16.4 12.6894 17 11.9494 17C11.2094 17 10.5994 16.4 10.5994 15.65V15.35C10.5994 14.6 9.99938 14 9.25938 14C8.51938 14 7.90938 14.6 7.90938 15.35V15.65C7.90938 16.4 7.30938 17 6.56938 17C5.81938 17 5.21937 16.4 5.21937 15.65V15.33C5.21937 14.59 4.62938 13.99 3.89938 13.98H3.10938V13C3.10938 11.62 4.14938 10.45 5.55938 10.11C5.83938 10.04 6.12938 10 6.43938 10H17.5594C17.8694 10 18.1594 10.04 18.4394 10.11C19.8494 10.45 20.8894 11.62 20.8894 13Z"/>
+                <path d="M18.4405 7.17V8.58C18.1505 8.52 17.8605 8.5 17.5605 8.5H6.44055C6.14055 8.5 5.85055 8.53 5.56055 8.59V7.17C5.56055 5.97 6.64055 5 7.98055 5H16.0205C17.3605 5 18.4405 5.97 18.4405 7.17Z"/>
+                <path d="M8.75 3.54844V5.00844H7.98C7.72 5.00844 7.48 5.03844 7.25 5.09844V3.54844C7.25 3.19844 7.59 2.89844 8 2.89844C8.41 2.89844 8.75 3.19844 8.75 3.54844Z"/>
+                <path d="M16.75 3.32812V5.09812C16.52 5.02813 16.28 4.99813 16.02 4.99813H15.25V3.32812C15.25 2.91813 15.59 2.57812 16 2.57812C16.41 2.57812 16.75 2.91813 16.75 3.32812Z"/>
+                <path d="M12.75 2.82V5H11.25V2.82C11.25 2.37 11.59 2 12 2C12.41 2 12.75 2.37 12.75 2.82Z"/>
+                <path d="M22 21.2505C22 21.6605 21.66 22.0005 21.25 22.0005H2.75C2.34 22.0005 2 21.6605 2 21.2505C2 20.8405 2.34 20.5005 2.75 20.5005H3.11V15.4805H3.72V15.5505C3.72 16.8905 4.6 18.1305 5.91 18.4205C6.93 18.6605 7.9 18.3305 8.56 17.6805C8.94 17.3005 9.56 17.2905 9.94 17.6705C10.46 18.1805 11.17 18.5005 11.95 18.5005C12.73 18.5005 13.44 18.1905 13.96 17.6705C14.34 17.3005 14.95 17.3005 15.34 17.6805C15.99 18.3305 16.96 18.6605 17.99 18.4205C19.3 18.1305 20.18 16.8905 20.18 15.5505V15.5005H20.89V20.5005H21.25C21.66 20.5005 22 20.8405 22 21.2505Z"/>
+            </symbol>
+            <symbol id = "icon-letter" viewBox="0 0 75.294 75.294">
+                <g>
+                    <path d="M66.097,12.089h-56.9C4.126,12.089,0,16.215,0,21.286v32.722c0,5.071,4.126,9.197,9.197,9.197h56.9 c5.071,0,9.197-4.126,9.197-9.197V21.287C75.295,16.215,71.169,12.089,66.097,12.089z M61.603,18.089L37.647,33.523L13.691,18.089 H61.603z M66.097,57.206h-56.9C7.434,57.206,6,55.771,6,54.009V21.457l29.796,19.16c0.04,0.025,0.083,0.042,0.124,0.065 c0.043,0.024,0.087,0.047,0.131,0.069c0.231,0.119,0.469,0.215,0.712,0.278c0.025,0.007,0.05,0.01,0.075,0.016 c0.267,0.063,0.537,0.102,0.807,0.102c0.001,0,0.002,0,0.002,0c0.002,0,0.003,0,0.004,0c0.27,0,0.54-0.038,0.807-0.102 c0.025-0.006,0.05-0.009,0.075-0.016c0.243-0.063,0.48-0.159,0.712-0.278c0.044-0.022,0.088-0.045,0.131-0.069 c0.041-0.023,0.084-0.04,0.124-0.065l29.796-19.16v32.551C69.295,55.771,67.86,57.206,66.097,57.206z"/>
+                </g>
+            </symbol>
+            <symbol id = "icon-half" viewBox="0 0 285.919 285.919">
+                <path d="M142.959,0C64.131,0,0,64.132,0,142.96c0,78.828,64.131,142.959,142.959,142.959c78.828,0,142.96-64.131,142.96-142.959 C285.919,64.132,221.787,0,142.959,0z M142.959,260.919V142.96V25c65.043,0,117.96,52.917,117.96,117.96 C260.919,208.003,208.002,260.919,142.959,260.919z"/>
+            </symbol>
+	</svg>
+<?php
+?>
+	</head>
+	<body>
+        <!-- https://www.youtube.com/watch?v=biOMz4puGt8&t=328s&pp=ygUMZmlyZXNoaXAgY3Nz -->
         <nav>
             <ul class = "navbarNav">
                 <li class = "navbarItem">
@@ -86,108 +97,54 @@
                 </div>
             </div>
         </div>
-        <main>
-            <div id="carouselCaptions" class="carousel slide carousel-fade boxShadow content" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./src/birthright.png" class="d-block carousel-img" alt="...">
-                        <div class="carousel-caption d-md-block">
-                            <h1 class = "white">Chromatic Aberration</h1>
-                            <p class = "white transBG">Working hard in bring the best quality.</p>
-                        </div>
+	<main>
+	<?php include "./components/banner.php";?>
+            <div class = "content">
+                <form class = "flexcolumn form login padding1rem">
+                    <div class="form__field">
+                        <label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
+                        <input id = "nameinput" type = "text" name = "name" placeholder = "Name" required/>
                     </div>
-                    <div class="carousel-item">
-                        <img src="./src/isaac.png" class="d-block carousel-img" alt="...">
-                        <div class="carousel-caption d-md-block">
-                            <h1 class = "white">Chromatic Aberration</h1>
-                            <p class = "white transBG">Total transparency and support when needed.</p>
-                        </div>
+                    <div class="form__field">
+                        <label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
+                        <input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" required/>
                     </div>
-                    <div class="carousel-item">
-                        <img src="./src/dimg.png" class="d-block carousel-img" alt="...">
-                        <div class="carousel-caption d-md-block">
-                            <h1 class = "white">Chromatic Aberration</h1>
-                            <p class = "white transBG">Compromise with our players.</p>
-                        </div>
+                    <div class="form__field">
+                        <label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
+                        <input id = "userinput" type = "text" name = "username" placeholder = "Username" required/>
                     </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                    <div class="form__field">
+                        <label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
+                        <input id = "passwordinput" type = "password" name = "password" placeholder = "Password" required/>
+                    </div>
+                    <div class="form__field">
+                        <label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
+                        <input id = "emailinput" type = "email" name = "email" placeholder = "Email" required/>
+                    </div>
+                    <div class="form__field">
+                        <label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>
+                        <input id = "dateinput" type = "date" name = "birthday" required/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sexSelect" class="form-label">Choose your sex</label>
+                        <select id="sexSelect" class="form-select">
+                            <option>Female</option>
+                            <option>Male</option>
+                            <option>Normal</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sexSelect" class="form-label">Choose your interests</label>
+                        <select id="sexSelect" class="form-select">
+                            <option>Community Member</option>
+                            <option>Beta Testing</option>
+                            <option>Development</option>
+                            <option>Collaborator</option>
+                        </select>
+                    </div>
+                    <input type="submit" value = "Submit"/>
+                </form>
             </div>
-            <div class="container text-center">
-                <div class="row g-2">
-                    <div class="col-6">
-                        <div class="p-3">
-                            <div class="card mb-3">
-                                <img src="./src/bun.jpeg" class="card-img-top" alt="Bun 'Cowsays' Hi mom!">
-                                <div class="card-body">
-                                    <h5 class="card-title">Bun Works Like a Charm!</h5>
-                                    <p class="card-text">Working with Bun, we realize that function just like one might expect from Node.js or Deno.js, but, like, better? Read more to know!</p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 6 days ago</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="p-3">
-                            <div class="card mb-3">
-                                <img src="./src/unity.webp" class="card-img-top" alt="Unity go broke and learn">
-                                <div class="card-body">
-                                    <h5 class="card-title">Unity Has Apologized</h5>
-                                    <p class="card-text">But it is actually resolved all this situation? No, but at least there's some kind of home for new and old user, Click here to read!</p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 6 days ago</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="p-3">
-                            <div class="card mb-3">
-                                <img src="./src/progress.jpeg" class="card-img-top" alt="Graphical progress in Birthright">
-                                <div class="card-body">
-                                    <h5 class="card-title">Slow Progress, But Progress Nonetheless</h5>
-                                    <p class="card-text">Is this depression? Maybe? And working this slow doesn't make it better, but hey, here we are, doing what I can, not what I want.</p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 7 days ago</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="p-3">
-                            <div class="card mb-3">
-                                <img src="./src/raylib.png" class="card-img-top" alt="Raylib, an open source library">
-                                <div class="card-body">
-                                    <h5 class="card-title">Migrating from Unity?</h5>
-                                    <p class="card-text">Raylib is an  open source library for C that allows you to make light weight and fast videogames. Read more here!</p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 8 days ago</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <section class = "aligntextleft padding2rem splash">
-                <h2>What we do</h2>
-                <div class = "flexrow">
-                    <article align="justify">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a fermentum nibh. Donec ac sapien et velit consectetur viverra nec non est. Donec ac orci at neque malesuada eleifend in non tellus. Ut ultricies pretium dolor ornare dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a eros ut magna blandit semper. Praesent non justo a ante eleifend porta eu ornare ipsum. Integer a eros quis felis porttitor egestas vitae nec elit. Praesent et enim eleifend, euismod elit a, malesuada dui. Nam et luctus magna. Duis ut risus est.
-                        Morbi tempor tincidunt lacus, ac vestibulum nisl suscipit sit amet. Maecenas lectus nisl, lacinia sit amet nibh non, lobortis egestas urna. Morbi pretium, sem eget molestie eleifend, diam quam elementum eros, ac vehicula odio nulla sed turpis. Vestibulum sollicitudin, diam vitae porta laoreet, magna turpis dapibus urna, at feugiat felis erat eu dui. Praesent ultricies volutpat velit id aliquet. Duis bibendum auctor dui, quis dictum lacus posuere vel. Nam ante tellus, efficitur pellentesque massa eget, egestas ornare tellus. Cras mattis finibus leo, id lacinia odio consequat eget.
-                    </article>
-                    <image class = "img marginleftauto padding1rem" src = "./src/pixiv.png"/>
-                </div>
-                <h3 class = "aligntextcenter padding2rem">We hope you all like what we do</h3>
-            </section>
         </main>
         <footer>
             <div class = "width100 flexrow alignitemcenter">
@@ -256,5 +213,5 @@
                 </ul>
             </div>
         </footer>
-    </body>
+	</body>
 </html>
