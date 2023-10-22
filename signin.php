@@ -39,179 +39,43 @@
 ?>
 	</head>
 	<body>
-        <!-- https://www.youtube.com/watch?v=biOMz4puGt8&t=328s&pp=ygUMZmlyZXNoaXAgY3Nz -->
-        <nav>
-            <ul class = "navbarNav">
-                <li class = "navbarItem">
-                    <a class = "navbarLink" href = "index.html">
-                        <span>
-                            <img class = "round" src = "./src/chromaber.png" alt = "Chromatic Aberration Logo" width = "60" height = "60"/>
-                        </span>
-                        <p class = "linkText">Home</p>
-                    </a>
-                </li>
-                <li class = "navbarItem" data-bs-toggle="modal" data-bs-target="#loginModal">
-                    <a class = "navbarLink" href = "#">
-                        <span>
-                            <svg class="navbaricon"><use xlink:href="#icon-user"></use></svg>
-                        </span>
-                        <p class = "linkText">Login</p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <script>
-            const myModal = document.getElementById('loginModal')
-            const myInput = document.getElementById('login')
-
-            myModal.addEventListener('shown.bs.modal', () => {
-                myInput.focus()
-            })
-        </script>
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- https://enlear.academy/31-example-login-form-for-website-42abc6f6d525 -->
-                        <div class="content">
-                            <form action = "" method="POST" class="form login">
-                                <div class="form__field">
-                                    <label class = "asidelabel" for="login__username"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
-                                    <input autocomplete="username" id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
-                                </div>
-                                <div class="form__field">
-                                    <label class = "asidelabel" for="login__password"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
-                                    <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
-                                </div>
-                                <div class="form__field">
-                                    <input type="submit" value="Log In">
-                                </div>
-                            </form>
-                            <p class="text--center">Not a member? <a href="signin.html"><i>Sign in now</i></a> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-	<main>
-	<?php include "./components/banner.php";?>
-            <div class = "content">
-                <form class = "flexcolumn form login padding1rem">
-                    <div class="form__field">
-                        <label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
-                        <input id = "nameinput" type = "text" name = "name" placeholder = "Name" required/>
-                    </div>
-                    <div class="form__field">
-                        <label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
-                        <input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" required/>
-                    </div>
-                    <div class="form__field">
-                        <label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
-                        <input id = "userinput" type = "text" name = "username" placeholder = "Username" required/>
-                    </div>
-                    <div class="form__field">
-                        <label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
-                        <input id = "passwordinput" type = "password" name = "password" placeholder = "Password" required/>
-                    </div>
-                    <div class="form__field">
-                        <label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
-                        <input id = "emailinput" type = "email" name = "email" placeholder = "Email" required/>
-                    </div>
-                    <div class="form__field">
-                        <label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>
-                        <input id = "dateinput" type = "date" name = "birthday" required/>
-                    </div>
-                    <div class="mb-3">
-                        <label for="sexSelect" class="form-label">Choose your sex</label>
-                        <select id="sexSelect" class="form-select">
-                            <option>Female</option>
-                            <option>Male</option>
-                            <option>Normal</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="sexSelect" class="form-label">Choose your interests</label>
-                        <select id="sexSelect" class="form-select">
-                            <option>Community Member</option>
-                            <option>Beta Testing</option>
-                            <option>Development</option>
-                            <option>Collaborator</option>
-                        </select>
-                    </div>
-                    <input type="submit" value = "Submit"/>
-                </form>
-            </div>
-        </main>
-        <footer>
-            <div class = "width100 flexrow alignitemcenter">
-                <div class="mapouter">
-                    <div class="gmap_canvas">
-                        <iframe class="gmap_iframe round1rem" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=400&amp;height=400&amp;hl=en&amp;q=Universidad of Atacama&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-                    </div>
-                </div>
-                <form action = "" method="POST" class="form login padding2rem marginleftauto">
-                    <div class="form__field">
-                        <label class = "asidelabel" for="name"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
-                        <input autocomplete="name" id="name" type="text" name="name" class="form__input" placeholder="Name" required>
-                    </div>
-                    <div class="form__field">
-                        <label class = "asidelabel" for="login__password"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
-                        <input id="email" type="email" name="email" class="form__input" placeholder="Email" required>
-                    </div>
-                    <div class="form__field">
-                        <label class = "asidelabel" for="issue"><svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg><span class="hidden">Issue</span></label>
-                        <input id="issue" type="text" name="issue" class="form__input" placeholder="Issue" required>
-                    </div>
-                    <div class="form__field">
-                        <input type="textarea" name="message" class="form__input" placeholder="Message" required>
-                    </div>
-                    <div class="form__field">
-                        <input type="submit" value="Send">
-                    </div>
-                </form> 
-            </div>
-            <div class="flexrow">
-                <div class="col mb-3 BG0">
-                    <a href="index.html">
-                        <img class = "footerLogo" src = "./src/logolight.png" alt = "Chromatic Aberration Logo" width = "500px"/>
-                    </a>
-                </div>
-                <div class="col-6 col-md-2 mb-3">
-                    <h3>Projects</h3>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Birthright</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">DOOMED</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">TOH: Between Realms</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Scars: Purpouse</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Dream Assault</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-2 mb-3">
-                    <h3>About Us</h3>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Code of Ethics</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Resources</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Community</a></li>
-                        <li class="nav-item mb-2"><a href="learnmore.html" class="nav-link p-0">Learn More</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="d-flex flex-column flex-sm-row justify-content-between border-top">
-                <i class = "footerDetails">🄯2023 Celeste Marambio, Powered by Andres Alfaro A</i>
-                <ul class="list-unstyled d-flex padding1rem">
-                    <li class="ms-3"><a href = "#" data-bs-toggle="tooltip" data-bs-title="chromaber@gmail.com" data-bs-placement="top"><img src = "./src/gmail.png" height = "50px"/></a></li>
-                    <li class="ms-3"><a href = "#" data-bs-toggle="tooltip" data-bs-title="Universidad de Atacama" data-bs-placement="top"><img src = "./src/maps.webp" height = "50px"/></a></li>
-                    <li class="ms-3"><a href = "#" data-bs-toggle="tooltip" data-bs-title="@SelfSpectrum" data-bs-placement="top"><img src = "./src/tele.png" height = "50px"/></a></li>
-                    <li class="ms-3"><a target = "_blank" href = "https://www.youtube.com/@aberracioncromatica771" data-bs-toggle="tooltip" data-bs-title="YouTube" data-bs-placement="top"><img src = "./src/youtube.png" height = "50px"/></a></li>
-                    <li class="ms-3"><a target = "_blank" href = "https://www.instagram.com/selfspectrum/" data-bs-toggle="tooltip" data-bs-title="Instagram" data-bs-placement="top"><img src = "./src/insta.png" height = "50px"/></a></li>
-                    <li class="ms-3"><a target = "_blank" href = "https://www.tumblr.com/selfspectrum" data-bs-toggle="tooltip" data-bs-title="Tumblr" data-bs-placement="top"><img src = "./src/tumblr.png" height = "50px"/></a></li>
-                </ul>
-            </div>
-        </footer>
-	</body>
-</html>
+		<?php include "./scripts/navbar.php"?>
+		<main>
+			<?php include "./scripts/banner.php";?>
+			<div class = "content">
+			<form class = "flexcolumn form login padding1rem">
+				<div class="form__field">
+                        		<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
+                        		<input id = "nameinput" type = "text" name = "name" placeholder = "Name" required/>
+                    		</div>
+                    		<div class="form__field">
+                        		<label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
+                        		<input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" required/>
+                    		</div>
+                    		<div class="form__field">
+                        		<label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
+                        		<input id = "userinput" type = "text" name = "username" placeholder = "Username" required/>
+                    		</div>
+                    		<div class="form__field">
+                        		<label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
+                        		<input id = "passwordinput" type = "password" name = "password" placeholder = "Password" required/>
+                    		</div>
+                    		<div class="form__field">
+                        		<label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
+                        		<input id = "emailinput" type = "email" name = "email" placeholder = "Email" required/>
+                    		</div>
+                    		<div class="form__field">
+                        		<label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>
+                        		<input id = "dateinput" type = "date" name = "birthday" required/>
+                    		</div>
+                    		<div class="mb-3">
+                        		<label for="sexSelect" class="form-label">Choose your sex</label>
+                        		<select id="sexSelect" class="form-select">
+                            			<option>Female</option>
+                            			<option>Male</option>
+                            			<option>Normal</option>
+                       		 	</select>
+                    		</div>
+                    		<div class="mb-3">
+                        		<label for="sexSelect" class="form-label">Choose your interests</label>
+                        		<select id="sexSelect" class="form-select">
