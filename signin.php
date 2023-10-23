@@ -35,47 +35,59 @@
                 <path d="M142.959,0C64.131,0,0,64.132,0,142.96c0,78.828,64.131,142.959,142.959,142.959c78.828,0,142.96-64.131,142.96-142.959 C285.919,64.132,221.787,0,142.959,0z M142.959,260.919V142.96V25c65.043,0,117.96,52.917,117.96,117.96 C260.919,208.003,208.002,260.919,142.959,260.919z"/>
             </symbol>
 	</svg>
-<?php
-?>
 	</head>
 	<body>
-		<?php include "./scripts/navbar.php"?>
+		<?php include "./scripts/navbar.php";?>
 		<main>
+			<?php include "./scripts/create.php";?>
 			<?php include "./scripts/banner.php";?>
 			<div class = "content">
-			<form class = "flexcolumn form login padding1rem">
-				<div class="form__field">
-                        		<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
-                        		<input id = "nameinput" type = "text" name = "name" placeholder = "Name" required/>
-                    		</div>
-                    		<div class="form__field">
-                        		<label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
-                        		<input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" required/>
-                    		</div>
-                    		<div class="form__field">
-                        		<label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
-                        		<input id = "userinput" type = "text" name = "username" placeholder = "Username" required/>
-                    		</div>
-                    		<div class="form__field">
-                        		<label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
-                        		<input id = "passwordinput" type = "password" name = "password" placeholder = "Password" required/>
-                    		</div>
-                    		<div class="form__field">
-                        		<label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
-                        		<input id = "emailinput" type = "email" name = "email" placeholder = "Email" required/>
-                    		</div>
-                    		<div class="form__field">
-                        		<label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>
-                        		<input id = "dateinput" type = "date" name = "birthday" required/>
-                    		</div>
-                    		<div class="mb-3">
-                        		<label for="sexSelect" class="form-label">Choose your sex</label>
-                        		<select id="sexSelect" class="form-select">
-                            			<option>Female</option>
-                            			<option>Male</option>
-                            			<option>Normal</option>
-                       		 	</select>
-                    		</div>
-                    		<div class="mb-3">
-                        		<label for="sexSelect" class="form-label">Choose your interests</label>
-                        		<select id="sexSelect" class="form-select">
+				<form class = "flexcolumn form login padding1rem" method = "get" action = "./scripts/create.php">
+					<div class="form__field">
+                        			<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
+                        			<input id = "nameinput" type = "text" name = "name" placeholder = "Name" required/>
+                    			</div>
+                    			<div class="form__field">
+                        			<label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
+                        			<input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" required/>
+                    			</div>
+	                    		<div class="form__field">
+        	                		<label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
+                	        		<input id = "userinput" type = "text" name = "username" placeholder = "Username" required/>
+                    			</div>
+                    			<div class="form__field">
+                        			<label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
+	                        		<input id = "passwordinput" type = "password" name = "password" placeholder = "Password" required/>
+        	            		</div>
+                	    		<div class="form__field">
+                        			<label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
+                        			<input id = "emailinput" type = "email" name = "email" placeholder = "Email" required/>
+	                    		</div>
+        	            		<div class="form__field">
+                	        		<label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>
+                        			<input id = "dateinput" type = "date" name = "birthday" required/>
+                    			</div>
+	                    		<div class="mb-3">
+        	                		<label for="sexSelect" class="form-label">Choose your sex</label>
+                		        		<select id="sexSelect" class="form-select">
+                            				<option>Female</option>
+                            				<option>Male</option>
+                            				<option>Normal</option>
+	                       		 	</select>
+        	            		</div>
+                    			<div class="mb-3">
+                        			<label for="sexSelect" class="form-label">Choose your interests</label>
+	                        		<select id="sexSelect" class="form-select">
+        		              			<option>Community Member</option>
+	                        	    		<option>Beta Testing</option>
+		                            		<option>Development</option>
+        		                    		<option>Collaborator</option>
+                		        	</select>
+	                    		</div>
+			     		<input type="submit" value = "Submit"/>
+		  		</form>
+			</div>
+		</main>
+		<?php include "./scripts/footer.php"?>
+	</body>
+</html>
