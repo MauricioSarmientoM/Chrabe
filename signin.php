@@ -39,10 +39,10 @@
 	<body>
 		<?php include "./scripts/navbar.php";?>
 		<main>
-			<?php include "./scripts/create.php";?>
 			<?php include "./scripts/banner.php";?>
+			<?php include "./scripts/create.php"?>
 			<div class = "content">
-				<form class = "flexcolumn form login padding1rem" method = "get" action = "./scripts/create.php">
+				<form class = "flexcolumn form login padding1rem" method = "get" action = "./scripts/insert.php">
 					<div class="form__field">
                         			<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
                         			<input id = "nameinput" type = "text" name = "name" placeholder = "Name" required/>
@@ -69,15 +69,15 @@
                     			</div>
 	                    		<div class="mb-3">
         	                		<label for="sexSelect" class="form-label">Choose your sex</label>
-                		        		<select id="sexSelect" class="form-select">
+                		        	<select id="sexSelect" class="form-select">
                             				<option>Female</option>
                             				<option>Male</option>
                             				<option>Normal</option>
 	                       		 	</select>
         	            		</div>
                     			<div class="mb-3">
-                        			<label for="sexSelect" class="form-label">Choose your interests</label>
-	                        		<select id="sexSelect" class="form-select">
+                        			<label for="interestSelect" class="form-label">Choose your interests</label>
+	                        		<select id="interestSelect" class="form-select">
         		              			<option>Community Member</option>
 	                        	    		<option>Beta Testing</option>
 		                            		<option>Development</option>

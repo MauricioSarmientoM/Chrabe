@@ -1,16 +1,14 @@
 <?php
-	$server = "localhost";
+	$server = "127.0.0.1";
 	$user = "root";
 	$pass = "";
-	$connection::mysqli($server, $user, $pass);
+	$db = "chrabe";
+	$connection = new mysqli($server, $user, $pass, $db);
 	if ($connection->connect_error) {
 		echo "Error: " . $connection->connect_error;
 	}
-	if ($mysqli->ping()) {
-		echo "Our connection is ok!";
-	}
 	else {
-		echo "Error: %s\n" . $mysqli->error;
+		echo "Connection done!";
 	}
-	echo "AAAAAA";
+	$connection->close();
 ?>
