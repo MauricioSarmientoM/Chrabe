@@ -2,13 +2,23 @@
 <nav>
 	<ul class = "navbarNav">
                 <li class = "navbarItem">
-                    	<a class = "navbarLink" href = "index.html">
+                    	<a class = "navbarLink" href = "index.php">
                         	<span>
                             		<img class = "round" src = "./src/chromaber.png" alt = "Chromatic Aberration Logo" width = "60" height = "60"/>
                         	</span>
                         	<p class = "linkText">Home</p>
                     	</a>
                 </li>
+		<?php if (isset($_SESSION['username'])) : ?>
+		<li class = "navbarItem">	
+                    	<a class = "navbarLink" href = "./scripts/logout.php">
+                     		<span>
+                	      		<svg class="navbaricon"><use xlink:href="#icon-user"></use></svg>
+        	               	</span>
+				<p class = "linkText"><?php echo $_SESSION['username']; ?></p>
+			</a>
+		</li>
+		<?php else : ?>
                 <li class = "navbarItem" data-bs-toggle="modal" data-bs-target="#loginModal">
                     	<a class = "navbarLink" href = "#">
                         	<span>
@@ -16,9 +26,21 @@
                         	</span>
                         	<p class = "linkText">Login</p>
                     	</a>
-                </li>
+		</li>
+		<?php endif; ?>
+		<?php if ($_SESSION['username'] == "SelfSpectrum") : ?>
+                <li class = "navbarItem">
+                    	<a class = "navbarLink" href = "gestor.php">
+                        	<span>
+                            		<img class = "round" src = "./src/chromaber.png" alt = "Chromatic Aberration Logo" width = "60" height = "60"/>
+                        	</span>
+                        	<p class = "linkText">Gestor</p>
+                    	</a>
+		</li>
+		<?php endif; ?>
 	</ul>
 </nav>
+<?php if (!isset($_SESSION['username'])) : ?>
 <script>
 	const myModal = document.getElementById('loginModal')
 	const myInput = document.getElementById('login')
@@ -34,7 +56,7 @@
     			<div class="modal-body">
 				<!-- https://enlear.academy/31-example-login-form-for-website-42abc6f6d525 -->
 				<div class="content">
-					<form action = "" method="POST" class="form login">
+					<form action = "./scripts/login.php" method="POST" class="form login">
                 				<div class="form__field">
 				    			<label class = "asidelabel" for="login__username"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
                                     			<input autocomplete="username" id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
@@ -53,3 +75,4 @@
 		</div>
 	</div>
 </div>
+<?php endif; ?>
