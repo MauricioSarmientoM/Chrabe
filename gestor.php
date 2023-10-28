@@ -42,7 +42,19 @@
 		<main>
 			<?php include "./scripts/banner.php";?>
 			<div class = "content">
-				<?php foreach (): ?>
+				<?php
+					$server = "127.0.0.1";
+					$user = "root";
+					$pass = "";
+					$db = "chrabe";
+					$connection = new mysqli($server, $user, $pass, $db);
+					if ($connection->connect_error) {
+						die("Connection failed: " . $connection->connect_error);
+					}
+					$result = $connection->query($query);
+
+					while ($row = $result->fetch_assoc()):
+				?>
 				<form class = "flexrow form login padding1rem" method = "get">
 					<div class="form__field">
                         			<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
@@ -95,7 +107,10 @@
 					}
 					</script>
 				</form>
-				<?php endforeach; ?>
+				<?php
+					endwhile;
+					$connection->close();
+				?>
 			</div>
 		</main>
 		<?php include "./scripts/footer.php"?>

@@ -30,7 +30,7 @@
 		<?php endif; ?>
 		<?php if ($_SESSION['username'] == "SelfSpectrum") : ?>
                 <li class = "navbarItem">
-                    	<a class = "navbarLink" href = "gestor.php">
+                    	<a class = "navbarLink" href = "../gestor.php">
                         	<span>
                             		<img class = "round" src = "./src/chromaber.png" alt = "Chromatic Aberration Logo" width = "60" height = "60"/>
                         	</span>
@@ -56,7 +56,7 @@
     			<div class="modal-body">
 				<!-- https://enlear.academy/31-example-login-form-for-website-42abc6f6d525 -->
 				<div class="content">
-					<form action = "./scripts/login.php" method="POST" class="form login">
+					<form action = "./scripts/login.php" method="GET" class="form login">
                 				<div class="form__field">
 				    			<label class = "asidelabel" for="login__username"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
                                     			<input autocomplete="username" id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
