@@ -27,7 +27,7 @@ input {
 
 .gform input[type="reset"],
 .gform input[type="submit"] {
-    width: 8rem;
+    width: 100%;
 }
 
 input[type="submit"],

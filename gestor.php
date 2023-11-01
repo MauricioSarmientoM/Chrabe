@@ -51,20 +51,9 @@
 			<?php include "./scripts/banner.php";?>
 			<div class = "content">
 				<?php
-				if (isset($_SESSION['error'])) : ?>
-                    unset($_SESSION['error']);
-				<?php
-				elseif (isset($_POST['modify'])) : ?>
-                    echo 'aaa';
-				}
-				<?php
-				elseif (isset($_POST['delete'])) : ?>
-                    echo 'aaa';
-                }
-				<?php
-				elseif (isset($_POST['add'])) : ?>
-				<form class = "flexcolumn form login padding1rem" method = "post" action = "./scripts/insertg.php">
-					<div class="form__field">
+                if (isset($_POST['create'])) { ?>
+					<form class = "flexcolumn form login padding1rem" method = "post" action = "gestor.php">
+						<div class="form__field">
                         			<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
                         			<input id = "nameinput" type = "text" name = "name" placeholder = "Name" required/>
                     			</div>
@@ -115,9 +104,42 @@
 					}
 					</script>
 		  		</form>
-				<?php
-				else : ?>
-					<?php
+                <?php } //end if 'create'
+				elseif (isset($_POST['read'])) { ?>
+					<form class = "flexcolumn form login padding1rem" method = "post" action = "gestor.php">
+						<div class = "form__field">
+							<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
+							<input id = "nameinput" type = "text" name = "name" value = "<?php echo $_POST['name']; ?>" readonly/>
+						</div>
+						<div class = "form__field">
+                        	<label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
+							<input id = "surnameinput" type = "text" name = "surname" value = "<?php echo $_POST['surname']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+        	                <label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
+							<input id = "userinput" type = "text" name = "username" value = "<?php echo $_POST['username']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+                        			<label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
+							<input id = "passwordinput" type = "text" name = "password" value = "<?php echo $_POST['password']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+                        	<label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
+							<input id = "emailinput" type = "text" name = "email" value = "<?php echo $_POST['email']; ?>" readonly/>
+						</div>
+                        <?php echo $_POST['birthdate']; ?>
+						<div class="form__field">
+							<input id = "dateinput" type = "date" name = "birthday" value = "<?php echo $_POST['birthdate']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<input id = "sexinput" type = "text" name = "sex" value = "<?php echo $_POST['sex']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<input id = "interestinput" type = "text" name = "interest" value = "<?php echo $_POST['interest']; ?>" readonly/>
+						</div>
+					</form>
+                <?php } //end if 'read'
+				else {
 					$server = "127.0.0.1";
 					$user = "root";
 					$pass = "";
@@ -126,49 +148,82 @@
 					if ($connection->connect_error) {
 						die("Connection failed: " . $connection->connect_error);
 					}
+					if (isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['birthday']) && isset($_POST['sex']) && isset($_POST['interest'])) { 
+						$name = $_POST['name'];
+						$surname = $_POST['surname'];
+						$username = $_POST['username'];
+						$password = $_POST['password'];
+						$email = $_POST['email'];
+						$birthdate = $_POST['birthday'];
+						$sex = $_POST['sex'];
+						$interests = $_POST['interest'];
+						$query = $connection->prepare("INSERT INTO users (name, surname, username, password, email, birthdate, sex, interests) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+						if (!$query) {
+							die("Preparation failed: " . $connection->error);
+						}
+						$query->bind_param("ssssssss", $name, $surname, $username, $password, $email, $birthdate, $sex, $interest);
+						if (!$query) {
+							die("Binding parameters failed: " . $query->error);
+						}
+						if ($query->execute()) {
+							$_SESSION['success'] = 'Insert complete! ' . $username . ' is done.';
+						}
+						else {
+							$_SESSION['warning'] = $connection->error;
+						}
+					}
+					if (isset($_SESSION['success'])) {
+    	                echo '<div class="alert alert-success" role="alert">'.$_SESSION['success'].'</div>';
+						unset($_SESSION['success']);
+					}
+					if (isset($_SESSION['warning'])) {
+        	            echo '<div class="alert alert-warning" role="alert">'.$_SESSION['warning'].'</div>';
+						unset($_SESSION['warning']);
+					}
 					$query = "SELECT * FROM users";
 					$result = $connection->query($query);
 					if ($result->num_rows > 0) {
-						while ($row = $result->fetch_assoc()) {
-							echo '<form class = "gform" method = "post" action = "gestor.php">';
-							echo '<div class="form__field">';
-							echo '<input class = "asideG" id = "userinput" type = "text" name = "username" value = "' . $row['username'] .'" readonly/>';
-							echo '</div>';
-							echo '<div class = "form__field">';
-							echo '<input id = "nameinput" type = "text" name = "name" value = "' . $row['name'] . '" readonly/>';
-							echo '</div>';
-							echo '<div class = "form__field">';
-							echo '<input id = "surnameinput" type = "text" name = "surname" value = "' . $row['surname'] . '" readonly/>';
-							echo '</div>';
-							echo '<div class="form__field">';
-							echo '<input id = "emailinput" type = "hidden" name = "email" value = "' . $row['email'] . '" readonly/>';
-							echo '</div>';
-							echo '<div class="form__field">';
-							echo '<input id = "passwordinput" type = "hidden" name = "password" value = "' . $row['password'] . '" readonly/>';
-							echo '</div>';
-							echo '<div class="form__field">';
-							echo '<input id = "dateinput" type = "hidden" name = "birthday" value = "' . $row['birthdate'] . '" readonly/>';
-							echo '</div>';
-							echo '<div class="form__field">';
-							echo '<input id = "sexinput" type = "hidden" name = "sex" value = "' . $row['sex'] . '" readonly/>';
-							echo '</div>';
-							echo '<div class="form__field">';
-							echo '<input id = "interestinput" type = "hidden" name = "interest" value = "' . $row['interests'] .'" readonly/>';
-							echo '</div>';
-							echo '<input class = "buttonG" type="submit" name = "modify" value = "Modify"/>';
-							echo '<input class = "buttonG" type="submit" name = "delete" value = "Delete"/>';
-							echo '</form>';
-						}
-						echo '<form method = "post" action = "gestor.php">';
-						echo '<input type = "hidden" name = "add" class = "buttonCh addUser" value = "Add"/>';
-						echo '<input type = "submit" class = "buttonCh addUser" value = "Add User"/>';
-						echo '</form>';
+						while ($row = $result->fetch_assoc()) { ?>
+							<form class = "gform" method = "post" action = "gestor.php">
+								<div class="form__field">
+									<input class = "asideG" id = "userinput" type = "text" name = "username" value = "<?php echo $row['username']?>" readonly/>
+								</div>
+								<div class = "form__field">
+									<input id = "nameinput" type = "text" name = "name" value = "<?php echo $row['name']?>" readonly/>
+								</div>
+								<div class = "form__field">
+									<input id = "surnameinput" type = "text" name = "surname" value = "<?php echo $row['surname']?>" readonly/>
+								</div>
+								<div class="form__field">
+									<input id = "emailinput" type = "hidden" name = "email" value = "<?php echo $row['email']?>" readonly/>
+								</div>
+								<div class="form__field">
+									<input id = "passwordinput" type = "hidden" name = "password" value = "<?php echo $row['password']?>" readonly/>
+								</div>
+								<div class="form__field">
+									<input id = "dateinput" type = "hidden" name = "birthday" value = "<?php echo $row['birthdate']?>" readonly/>
+								</div>
+								<div class="form__field">
+									<input id = "sexinput" type = "hidden" name = "sex" value = "<?php echo $row['sex']?>" readonly/>
+								</div>
+								<div class="form__field">
+									<input id = "interestinput" type = "hidden" name = "interest" value = "<?php echo $row['interests']?>" readonly/>
+								</div>
+								<div class="form__field">
+									<input class = "buttonG" type="submit" name = "read" value = "Read"/>
+								</div>
+								<div class="form__field">
+									<input class = "buttonG" type="submit" name = "update" value = "Update"/>
+								</div>
+								<div class="form__field">
+									<input class = "buttonG" type="submit" name = "delete" value = "Delete"/>
+								</div>
+							</form>
+						<?php } //end while $row
+						$connection->close();
 					}
-					else {
-						echo "No users found";
-					}
-					$connection->close(); ?>
-				endif; ?>
+                    echo '<form method = "post" action = "gestor.php"><input type = "submit" name = "create" class = "buttonCh addUser" value = "Create User"/></form>';
+			} ?>
 			</div>
 		</main>
 		<?php include "./scripts/footer.php"?>
