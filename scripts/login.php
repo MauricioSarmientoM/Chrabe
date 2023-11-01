@@ -8,9 +8,9 @@
 	if ($connection->connect_error) {
 		die("Error: " . $connection->connect_error);
 	}
-	if (isset($_GET['username']) && isset($_GET['password'])) { 
-		$username = $_GET['username'];
-		$password = $_GET['password'];
+	if (isset($_POST['username']) && isset($_POST['password'])) { 
+		$username = $_POST['username'];
+		$password = $_POST['password'];
 		// Use a prepared statement to prevent SQL injection
         $query = $connection->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
         $query->bind_param("ss", $username, $password);

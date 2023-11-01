@@ -1,4 +1,11 @@
-<?php session_start();?>
+<?php 
+	session_start();
+	if (!isset($_SESSION['username'])) {
+		if ($_SESSION['username'] != "SelfSpectrum") {
+			header("Location: ../index.php");
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en-US" data-bs-theme="dark">
 	<head>
@@ -11,6 +18,7 @@
         <link rel = "stylesheet" href = "./node_modules/bootstrap/dist/css/bootstrap.min.css" />
         <script type = "text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <link rel = "stylesheet" href = "./css/login.css"/>
+        <link rel = "stylesheet" href = "./css/gestor.css"/>
         <title>Chromatic Aberration</title>
         <svg xmlns="http://www.w3.org/2000/svg" class="icons">
             <symbol id="icon-lock" viewBox="0 0 1792 1792">
@@ -43,19 +51,19 @@
 			<?php include "./scripts/banner.php";?>
 			<div class = "content">
 				<?php
-					$server = "127.0.0.1";
-					$user = "root";
-					$pass = "";
-					$db = "chrabe";
-					$connection = new mysqli($server, $user, $pass, $db);
-					if ($connection->connect_error) {
-						die("Connection failed: " . $connection->connect_error);
-					}
-					$result = $connection->query($query);
-
-					while ($row = $result->fetch_assoc()):
-				?>
-				<form class = "flexrow form login padding1rem" method = "get">
+				if (isset($_SESSION['error'])) : ?>
+                    unset($_SESSION['error']);
+				<?php
+				elseif (isset($_POST['modify'])) : ?>
+                    echo 'aaa';
+				}
+				<?php
+				elseif (isset($_POST['delete'])) : ?>
+                    echo 'aaa';
+                }
+				<?php
+				elseif (isset($_POST['add'])) : ?>
+				<form class = "flexcolumn form login padding1rem" method = "post" action = "./scripts/insertg.php">
 					<div class="form__field">
                         			<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
                         			<input id = "nameinput" type = "text" name = "name" placeholder = "Name" required/>
@@ -106,11 +114,61 @@
 						document.getElementById("interestinput").value = document.getElementById("interestSelect").value;
 					}
 					</script>
-				</form>
+		  		</form>
 				<?php
-					endwhile;
-					$connection->close();
-				?>
+				else : ?>
+					<?php
+					$server = "127.0.0.1";
+					$user = "root";
+					$pass = "";
+					$db = "chrabe";
+					$connection = new mysqli($server, $user, $pass, $db);
+					if ($connection->connect_error) {
+						die("Connection failed: " . $connection->connect_error);
+					}
+					$query = "SELECT * FROM users";
+					$result = $connection->query($query);
+					if ($result->num_rows > 0) {
+						while ($row = $result->fetch_assoc()) {
+							echo '<form class = "gform" method = "post" action = "gestor.php">';
+							echo '<div class="form__field">';
+							echo '<input class = "asideG" id = "userinput" type = "text" name = "username" value = "' . $row['username'] .'" readonly/>';
+							echo '</div>';
+							echo '<div class = "form__field">';
+							echo '<input id = "nameinput" type = "text" name = "name" value = "' . $row['name'] . '" readonly/>';
+							echo '</div>';
+							echo '<div class = "form__field">';
+							echo '<input id = "surnameinput" type = "text" name = "surname" value = "' . $row['surname'] . '" readonly/>';
+							echo '</div>';
+							echo '<div class="form__field">';
+							echo '<input id = "emailinput" type = "hidden" name = "email" value = "' . $row['email'] . '" readonly/>';
+							echo '</div>';
+							echo '<div class="form__field">';
+							echo '<input id = "passwordinput" type = "hidden" name = "password" value = "' . $row['password'] . '" readonly/>';
+							echo '</div>';
+							echo '<div class="form__field">';
+							echo '<input id = "dateinput" type = "hidden" name = "birthday" value = "' . $row['birthdate'] . '" readonly/>';
+							echo '</div>';
+							echo '<div class="form__field">';
+							echo '<input id = "sexinput" type = "hidden" name = "sex" value = "' . $row['sex'] . '" readonly/>';
+							echo '</div>';
+							echo '<div class="form__field">';
+							echo '<input id = "interestinput" type = "hidden" name = "interest" value = "' . $row['interests'] .'" readonly/>';
+							echo '</div>';
+							echo '<input class = "buttonG" type="submit" name = "modify" value = "Modify"/>';
+							echo '<input class = "buttonG" type="submit" name = "delete" value = "Delete"/>';
+							echo '</form>';
+						}
+						echo '<form method = "post" action = "gestor.php">';
+						echo '<input type = "hidden" name = "add" class = "buttonCh addUser" value = "Add"/>';
+						echo '<input type = "submit" class = "buttonCh addUser" value = "Add User"/>';
+						echo '</form>';
+					}
+					else {
+						echo "No users found";
+					}
+					$connection->close(); ?>
+				endif; ?>
 			</div>
 		</main>
 		<?php include "./scripts/footer.php"?>

@@ -42,7 +42,7 @@
 		<main>
 			<?php include "./scripts/banner.php";?>
 			<div class = "content">
-				<form class = "flexcolumn form login padding1rem" method = "get" action = "./scripts/insert.php">
+				<form class = "flexcolumn form login padding1rem" method = "post" action = "./scripts/insert.php">
 					<div class="form__field">
                         			<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
                         			<input id = "nameinput" type = "text" name = "name" placeholder = "Name" required/>

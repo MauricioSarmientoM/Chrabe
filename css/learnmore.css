@@ -21,22 +21,6 @@
     border-radius: 50%;
 }
 
-.mapouter{
-    position:relative;
-    text-align:right;
-    width:400px;
-    height:400px;
-}
-.gmap_canvas {
-    overflow:hidden;
-    background:none!important;
-    width:400px;
-    height:400px;
-}
-.gmap_iframe {
-    width:400px!important;
-    height:400px!important;
-}
 .card-img-top {
     height: 10rem !important;
     object-fit: cover;

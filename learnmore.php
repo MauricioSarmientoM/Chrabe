@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en-US" data-bs-theme="dark">
 	<head>
@@ -32,242 +33,82 @@
         </svg>
 	</head>
 	<body>
-        <nav>
-            <ul class = "navbarNav">
-                <li class = "navbarItem">
-                    <a class = "navbarLink" href = "index.html">
-                        <span>
-                            <img class = "round" src = "./src/chromaber.png" alt = "Chromatic Aberration Logo" width = "60" height = "60"/>
-                        </span>
-                        <p class = "linkText">Home</p>
-                    </a>
-                </li>
-                <li class = "navbarItem" data-bs-toggle="modal" data-bs-target="#loginModal">
-                    <a class = "navbarLink" href = "#">
-                        <span>
-                            <svg class="navbaricon"><use xlink:href="#icon-user"></use></svg>
-                        </span>
-                        <p class = "linkText">Login</p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <script>
-            const myModal = document.getElementById('loginModal')
-            const myInput = document.getElementById('login')
-
-            myModal.addEventListener('shown.bs.modal', () => {
-                myInput.focus()
-            })
-        </script>
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- https://enlear.academy/31-example-login-form-for-website-42abc6f6d525 -->
-                        <div class="content">
-                            <form action = "" method="POST" class="form login">
-                                <div class="form__field">
-                                    <label class = "asidelabel" for="login__username"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
-                                    <input autocomplete="username" id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
-                                </div>
-                                <div class="form__field">
-                                    <label class = "asidelabel" for="login__password"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
-                                    <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
-                                </div>
-                                <div class="form__field">
-                                    <input type="submit" value="Log In">
-                                </div>
-                            </form>
-                            <p class="text--center">Not a member? <a href="signin.html"><i>Sign in now</i></a> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <main>
-            <div id="carouselCaptions" class="carousel slide carousel-fade boxShadow content" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./src/birthright.png" class="d-block carousel-img" alt="...">
-                        <div class="carousel-caption d-md-block">
-                            <h1 class = "white">Chromatic Aberration</h1>
-                            <p class = "white transBG">Working hard in bring the best quality.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./src/isaac.png" class="d-block carousel-img" alt="...">
-                        <div class="carousel-caption d-md-block">
-                            <h1 class = "white">Chromatic Aberration</h1>
-                            <p class = "white transBG">Total transparency and support when needed.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./src/dimg.png" class="d-block carousel-img" alt="...">
-                        <div class="carousel-caption d-md-block">
-                            <h1 class = "white">Chromatic Aberration</h1>
-                            <p class = "white transBG">Compromise with our players.</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-            <div class = "presgrid content boxShadow">
-                <h2 class = "title">Who we are</h2>
-                <p class = "article">
-                    Chromatic Aberration is small organization from Chile full with <i>hopes</i> and <i>dreams</i>, focused in making videogames. The last 6 years, the team has been working on <i>polish</i> and <i>improve</i> their abilities, whether are informatic or artistic skills.
-                    Several projects have been created in these years, but rarely one sees the light of the sun since <i>always</i> seems to be some sort of problem with the development, making impossible or quite difficult it's publication. Yey, we don't surrender and keep working on our projects
-                    with the same love and illusion like the first day!
-                </p>
-                <div class="inside-card mb-3 crom">
-                    <img src="./src/abercroma.jpg" class="card-img-top" alt="Aberración Cromática">
-                    <div class="padding1rem">
-                        <i>Aberración Cromática</i> was the first try of going outside and show our works to the world.
-                    </div>
-                </div>
-                <div class="inside-card mb-3 octan">
-                    <img src="./src/octan.png" class="card-img-top" alt="Octa(n)">
-                    <div class="padding1rem">
-                        <i>Octa(n)</i> is a parallel project in an attempt of making useful tools for the everyday people.
-                    </div>
-                </div>
-            </div>
-
-            <div class="container text-center">
-                <div class="row g-1">
-                    <div class="col-4">
-                        <div class="p-3">
-                            <div class="card mb-3">
-                                <img src="./src/twim.jpg" class="card-img-top" alt="Twim Blark Me">
-                                <div class="card-body">
-                                    <h5 class="card-title">Twim Blark Me</h5>
-                                    <p class="card-text">Digital painter and animator, expert in his area, can't dissapoint!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="p-3">
-                            <div class="card mb-3">
-                                <img src="./src/hyperstrident.png" class="card-img-top" alt="Hyper Strident">
-                                <div class="card-body">
-                                    <h5 class="card-title">Hyper Strident</h5>
-                                    <p class="card-text">Unique musician and productor, nobody like him when he's in charge!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="p-3">
-                            <div class="card mb-3">
-                                <img src="./src/ss.jpg" class="card-img-top" alt="Self Spectrum">
-                                <div class="card-body">
-                                    <h5 class="card-title">Self Spectrum</h5>
-                                    <p class="card-text">Game developer and game designer, fighting against depression.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class = "content width100 flexrow transBG boxShadow">
-                <p class = "padding4rem">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a fermentum nibh. Donec ac sapien et velit consectetur viverra nec non est. Donec ac orci at neque malesuada eleifend in non tellus. Ut ultricies pretium dolor ornare dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a eros ut magna blandit semper. Praesent non justo a ante eleifend porta eu ornare ipsum. Integer a eros quis felis porttitor egestas vitae nec elit. Praesent et enim eleifend, euismod elit a, malesuada dui. Nam et luctus magna. Duis ut risus est.
-                </p>
-                <p class = "padding4rem">
-                    Morbi tempor tincidunt lacus, ac vestibulum nisl suscipit sit amet. Maecenas lectus nisl, lacinia sit amet nibh non, lobortis egestas urna. Morbi pretium, sem eget molestie eleifend, diam quam elementum eros, ac vehicula odio nulla sed turpis. Vestibulum sollicitudin, diam vitae porta laoreet, magna turpis dapibus urna, at feugiat felis erat eu dui. Praesent ultricies volutpat velit id aliquet. Duis bibendum auctor dui, quis dictum lacus posuere vel. Nam ante tellus, efficitur pellentesque massa eget, egestas ornare tellus. Cras mattis finibus leo, id lacinia odio consequat eget.
-                </p>
-            </div>
-            <div class = "content width100 flexrow transBG boxShadow">
-                <image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
-                <image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
-                <image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
-                <image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
-                <image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
-            </div>
-        </main>
-        <footer>
-            <div class = "width100 flexrow alignitemcenter">
-                <div class="mapouter">
-                    <div class="gmap_canvas">
-                        <iframe class="gmap_iframe round1rem" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=400&amp;height=400&amp;hl=en&amp;q=Universidad of Atacama&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-                    </div>
-                </div>
-                <form action = "" method="POST" class="form login padding2rem marginleftauto">
-                    <div class="form__field">
-                        <label class = "asidelabel" for="name"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
-                        <input autocomplete="name" id="name" type="text" name="name" class="form__input" placeholder="Name" required>
-                    </div>
-                    <div class="form__field">
-                        <label class = "asidelabel" for="login__password"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
-                        <input id="email" type="email" name="email" class="form__input" placeholder="Email" required>
-                    </div>
-                    <div class="form__field">
-                        <label class = "asidelabel" for="issue"><svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg><span class="hidden">Issue</span></label>
-                        <input id="issue" type="text" name="issue" class="form__input" placeholder="Issue" required>
-                    </div>
-                    <div class="form__field">
-                        <input type="textarea" name="message" class="form__input" placeholder="Message" required>
-                    </div>
-                    <div class="form__field">
-                        <input type="submit" value="Send">
-                    </div>
-                </form> 
-            </div>
-            <div class="flexrow">
-                <div class="col mb-3 BG0">
-                    <a href="index.html">
-                        <img class = "footerLogo" src = "./src/logolight.png" alt = "Chromatic Aberration Logo" width = "500px"/>
-                    </a>
-                </div>
-                <div class="col-6 col-md-2 mb-3">
-                    <h3>Projects</h3>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Birthright</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">DOOMED</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">TOH: Between Realms</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Scars: Purpouse</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Dream Assault</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-2 mb-3">
-                    <h3>About Us</h3>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Code of Ethics</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Resources</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Community</a></li>
-                        <li class="nav-item mb-2"><a href="learnmore.html" class="nav-link p-0">Learn More</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="d-flex flex-column flex-sm-row justify-content-between border-top">
-                <i class = "footerDetails">🄯2023 Celeste Marambio, Powered by Andres Alfaro A</i>
-                <ul class="list-unstyled d-flex padding1rem">
-                    <li class="ms-3"><a href = "#" data-bs-toggle="tooltip" data-bs-title="chromaber@gmail.com" data-bs-placement="top"><img src = "./src/gmail.png" height = "50px"/></a></li>
-                    <li class="ms-3"><a href = "#" data-bs-toggle="tooltip" data-bs-title="Universidad de Atacama" data-bs-placement="top"><img src = "./src/maps.webp" height = "50px"/></a></li>
-                    <li class="ms-3"><a href = "#" data-bs-toggle="tooltip" data-bs-title="@SelfSpectrum" data-bs-placement="top"><img src = "./src/tele.png" height = "50px"/></a></li>
-                    <li class="ms-3"><a target = "_blank" href = "https://www.youtube.com/@aberracioncromatica771" data-bs-toggle="tooltip" data-bs-title="YouTube" data-bs-placement="top"><img src = "./src/youtube.png" height = "50px"/></a></li>
-                    <li class="ms-3"><a target = "_blank" href = "https://www.instagram.com/selfspectrum/" data-bs-toggle="tooltip" data-bs-title="Instagram" data-bs-placement="top"><img src = "./src/insta.png" height = "50px"/></a></li>
-                    <li class="ms-3"><a target = "_blank" href = "https://www.tumblr.com/selfspectrum" data-bs-toggle="tooltip" data-bs-title="Tumblr" data-bs-placement="top"><img src = "./src/tumblr.png" height = "50px"/></a></li>
-                </ul>
-            </div>
-        </footer>
+		<?php include "./scripts/navbar.php";?>
+	        <main>
+			<?php include "./scripts/banner.php";?>
+            		<div class = "presgrid content boxShadow">
+                	<h2 class = "title">Who we are</h2>
+                	<p class = "article">
+                    		Chromatic Aberration is small organization from Chile full with <i>hopes</i> and <i>dreams</i>, focused in making videogames. The last 6 years, the team has been working on <i>polish</i> and <i>improve</i> their abilities, whether are informatic or artistic skills.
+                    		Several projects have been created in these years, but rarely one sees the light of the sun since <i>always</i> seems to be some sort of problem with the development, making impossible or quite difficult it's publication. Yey, we don't surrender and keep working on our projects
+                    		with the same love and illusion like the first day!
+                	</p>
+                	<div class="inside-card mb-3 crom">
+                    		<img src="./src/abercroma.jpg" class="card-img-top" alt="Aberración Cromática">
+                    		<div class="padding1rem">
+                        		<i>Aberración Cromática</i> was the first try of going outside and show our works to the world.
+                    		</div>
+                	</div>
+                	<div class="inside-card mb-3 octan">
+                    		<img src="./src/octan.png" class="card-img-top" alt="Octa(n)">
+                    		<div class="padding1rem">
+                        		<i>Octa(n)</i> is a parallel project in an attempt of making useful tools for the everyday people.
+                    		</div>
+                	</div>
+            	</div>
+            	<div class="container text-center">
+                	<div class="row g-1">
+                    		<div class="col-4">
+                        		<div class="p-3">
+                            			<div class="card mb-3">
+                                			<img src="./src/twim.jpg" class="card-img-top" alt="Twim Blark Me">
+                                			<div class="card-body">
+                                    				<h5 class="card-title">Twim Blark Me</h5>
+                                    				<p class="card-text">Digital painter and animator, expert in his area, can't dissapoint!</p>
+                                			</div>
+                            			</div>
+                        		</div>
+                    		</div>
+                    		<div class="col-4">
+                        		<div class="p-3">
+                            			<div class="card mb-3">
+                                			<img src="./src/hyperstrident.png" class="card-img-top" alt="Hyper Strident">
+                                			<div class="card-body">
+                                    				<h5 class="card-title">Hyper Strident</h5>
+                                    				<p class="card-text">Unique musician and productor, nobody like him when he's in charge!</p>
+                               	 			</div>
+                            			</div>
+                        		</div>
+                    		</div>
+                    			<div class="col-4">
+                        			<div class="p-3">
+                            				<div class="card mb-3">
+                                				<img src="./src/ss.jpg" class="card-img-top" alt="Self Spectrum">
+                                				<div class="card-body">
+                                    					<h5 class="card-title">Self Spectrum</h5>
+                                    					<p class="card-text">Game developer and game designer, fighting against depression.</p>
+                                				</div>
+                            				</div>
+                        			</div>
+                    			</div>
+                		</div>
+            		</div>
+            		<div class = "content width100 flexrow transBG boxShadow">
+                		<p class = "padding4rem">
+                    			Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a fermentum nibh. Donec ac sapien et velit consectetur viverra nec non est. Donec ac orci at neque malesuada eleifend in non tellus. Ut ultricies pretium dolor ornare dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a eros ut magna blandit semper. Praesent non justo a ante eleifend porta eu ornare ipsum. Integer a eros quis felis porttitor egestas vitae nec elit. Praesent et enim eleifend, euismod elit a, malesuada dui. Nam et luctus magna. Duis ut risus est.
+                		</p>
+                		<p class = "padding4rem">
+                    			Morbi tempor tincidunt lacus, ac vestibulum nisl suscipit sit amet. Maecenas lectus nisl, lacinia sit amet nibh non, lobortis egestas urna. Morbi pretium, sem eget molestie eleifend, diam quam elementum eros, ac vehicula odio nulla sed turpis. Vestibulum sollicitudin, diam vitae porta laoreet, magna turpis dapibus urna, at feugiat felis erat eu dui. Praesent ultricies volutpat velit id aliquet. Duis bibendum auctor dui, quis dictum lacus posuere vel. Nam ante tellus, efficitur pellentesque massa eget, egestas ornare tellus. Cras mattis finibus leo, id lacinia odio consequat eget.
+                		</p>
+            		</div>
+            		<div class = "content width100 flexrow transBG boxShadow">
+                		<image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
+                		<image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
+                		<image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
+                		<image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
+                		<image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
+            		</div>
+        	</main>
+		<?php include "./scripts/footer.php"?>
 	</body>
 </html>

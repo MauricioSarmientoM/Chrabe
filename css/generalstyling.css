@@ -158,6 +158,22 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
+.mapouter{
+    position:relative;
+    text-align:right;
+    width:400px;
+    height:400px;
+}
+.gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    width:400px;
+    height:400px;
+}
+.gmap_iframe {
+    width:400px!important;
+    height:400px!important;
+}
 a {
     text-decoration: none !important;
     color: var(--mainText) !important;

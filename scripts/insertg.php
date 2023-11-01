@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	$server = "127.0.0.1";
 	$user = "root";
 	$pass = "";
@@ -27,19 +26,11 @@
 			die("Binding parameters failed: " . $query->error);
 		}
 		if ($query->execute()) {
-			$_SESSION["name"] = $name;
-			$_SESSION["surname"] = $surname;
-			$_SESSION["username"] = $username;
-			$_SESSION["password"] = $password;
-			$_SESSION["email"] = $email;
-			$_SESSION["birthdate"] = $birthdate;
-			$_SESSION["sex"] = $sex;
-			$_SESSION["interests"] = $interests;
-			header("Location: ../index.php");
+			header("Location: ../gestor.php");
 			exit();
 		}
 		else {
-       			header("Location: ../signin.php");
+       			header("Location: ../gestor.php");
        			exit();
 		}
 	}

@@ -1,0 +1,111 @@
+.addUser {
+    inline-size: 100%;
+    cursor: pointer;
+    padding: 1rem;
+}
+.gform {
+    display: flex;
+    margin-bottom: .5rem;
+}
+input {
+  background-image: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  transition: background-color 0.3s;
+}
+
+.gform:first-child {
+    border-radius: 0 .25rem .25rem 0 !important;
+}
+.gform:last-child {
+    border-radius: .25rem 0 0 .25rem;
+}
+
+.gform input[type="reset"],
+.gform input[type="submit"] {
+    width: 8rem;
+}
+
+input[type="submit"],
+input[type="reset"],
+.buttonG{
+    cursor: pointer;
+    padding: 1rem;
+}
+.gform input[type="email"],
+.gform input[type="password"],
+.gform input[type="text"],
+.gform input[type="number"],
+.gform input[type="date"],
+.gform input[type="textarea"] {
+  inline-size: 100%;
+}
+
+.buttonG {
+    border: 0px solid;
+}
+
+.asideG {
+  background-color: var(--loginLabelBackgroundColor) !important;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.gform input[type="email"],
+.gform input[type="password"],
+.gform input[type="text"],
+.gform input[type="number"],
+.gform input[type="date"],
+.gform input[type="radio"],
+.gform input[type="textarea"],
+.gform input[type="checkbox"] {
+  background-color: var(--loginInputBackgroundColor);
+  padding: 1rem;
+}
+
+.gform input[type="email"]:focus,
+.gform input[type="email"]:hover,
+.gform input[type="password"]:focus,
+.gform input[type="password"]:hover,
+.gform input[type="text"]:focus,
+.gform input[type="text"]:hover,
+.gform input[type="number"]:focus,
+.gform input[type="number"]:hover,
+.gform input[type="date"]:focus,
+.gform input[type="date"]:hover,
+.gform input[type="radio"]:focus,
+.gform input[type="radio"]:hover,
+.gform input[type="checkbox"]:focus,
+.gform input[type="checkbox"]:hover,
+.gform input[type="password"]:focus,
+.gform input[type="password"]:hover,
+.gform input[type="textarea"]:focus,
+.gform input[type="textarea"]:hover,
+.gform input[type="email"]:focus,
+.gform input[type="email"]:hover {
+  background-color: var(--loginInputHoverBackgroundColor);
+}
+
+.gform input[type="reset"],
+.gform input[type="submit"],
+.buttonG {
+    background-color: var(--loginSubmitBackgroundColor);
+    color: var(--loginSubmitColor);
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+}
+
+.gform input[type="reset"]:focus,
+.gform input[type="reset"]:hover,
+.gform input[type="submit"]:focus,
+.gform input[type="submit"]:hover,
+.buttonG:focus,
+.buttonG:hover {
+    color: var(--loginSubmitHoverColor);
+    background-color: var(--loginSubmitHoverBackgroundColor);
+    box-shadow: -5px 5px 0 rgba(255, 0, 0, .75), 5px -5px 0 rgba(0, 255, 255, .75);
+}
