@@ -32,7 +32,7 @@
                 <li class = "navbarItem">
                     	<a class = "navbarLink" href = "../gestor.php">
                         	<span>
-                            		<img class = "round" src = "./src/chromaber.png" alt = "Chromatic Aberration Logo" width = "60" height = "60"/>
+                            		<svg class="navbaricon"><use xlink:href="#icon-half"></use></svg>
                         	</span>
                         	<p class = "linkText">Gestor</p>
                     	</a>

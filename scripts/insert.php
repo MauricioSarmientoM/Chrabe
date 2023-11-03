@@ -35,12 +35,14 @@
 			$_SESSION["birthdate"] = $birthdate;
 			$_SESSION["sex"] = $sex;
 			$_SESSION["interests"] = $interests;
+			$_SESSION["success"] = "Your account was created successfully!";
 			header("Location: ../index.php");
 			exit();
 		}
 		else {
-       			header("Location: ../signin.php");
-       			exit();
+			$_SESSION["warning"] = $connection->error;
+			header("Location: ../signin.php");
+			exit();
 		}
 	}
 	$connection->close();

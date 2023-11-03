@@ -54,56 +54,56 @@
                 if (isset($_POST['create'])) { ?>
 					<form class = "flexcolumn form login padding1rem" method = "post" action = "gestor.php">
 						<div class="form__field">
-                        			<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
-                        			<input id = "nameinput" type = "text" name = "name" placeholder = "Name" required/>
-                    			</div>
-                    			<div class="form__field">
-                        			<label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
-                        			<input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" required/>
-                    			</div>
-	                    		<div class="form__field">
-        	                		<label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
-                	        		<input id = "userinput" type = "text" name = "username" placeholder = "Username" required/>
-                    			</div>
-                    			<div class="form__field">
-                        			<label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
-	                        		<input id = "passwordinput" type = "password" name = "password" placeholder = "Password" required/>
-        	            		</div>
-                	    		<div class="form__field">
-                        			<label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
-                        			<input id = "emailinput" type = "email" name = "email" placeholder = "Email" required/>
-	                    		</div>
-        	            		<div class="form__field">
-                	        		<label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>
-                        			<input id = "dateinput" type = "date" name = "birthday" required/>
-                    			</div>
-	                    		<div class="mb-3">
-        	                		<label for="sexSelect" class="form-label">Choose your sex</label>
-                		        	<select id="sexSelect" class="form-select" required>
-                            				<option>Female</option>
-                            				<option>Male</option>
-                            				<option>Normal</option>
-	                       		 	</select>
-						<input id = "sexinput" type = "hidden" name = "sex" value = ""/>
-        	            		</div>
-                    			<div class="mb-3">
-                        			<label for="interestSelect" class="form-label">Choose your interests</label>
-	                        		<select id="interestSelect" class="form-select" required>
-        		              			<option>Community Member</option>
-	                        	    		<option>Beta Testing</option>
-		                            		<option>Development</option>
-        		                    		<option>Collaborator</option>
-						</select>
-						<input id = "interestinput" type = "hidden" name = "interest" value = ""/>
-	                    		</div>
-			     		<input type="submit" value = "Submit" onclick = "setData()"/>
-					<script type="text/javascript">
-					function setData() {
-						document.getElementById("sexinput").value = document.getElementById("sexSelect").value;
-						document.getElementById("interestinput").value = document.getElementById("interestSelect").value;
-					}
-					</script>
-		  		</form>
+                        	<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
+                       		<input id = "nameinput" type = "text" name = "name" placeholder = "Name" required/>
+                   		</div>
+						<div class="form__field">
+							<label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
+							<input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" required/>
+						</div>
+						<div class="form__field">
+							<label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
+							<input id = "userinput" type = "text" name = "username" placeholder = "Username" required/>
+						</div>
+						<div class="form__field">
+							<label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
+							<input id = "passwordinput" type = "password" name = "password" placeholder = "Password" required/>
+						</div>
+						<div class="form__field">
+							<label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
+							<input id = "emailinput" type = "email" name = "email" placeholder = "Email" required/>
+						</div>
+						<div class="form__field">
+							<label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>
+							<input id = "dateinput" type = "date" name = "birthday" required/>
+						</div>
+						<div class="mb-3">
+							<label for="sexSelect" class="form-label">Choose your sex</label>
+							<select id="sexSelect" class="form-select" required>
+								<option>Female</option>
+								<option>Male</option>
+								<option>Normal</option>
+							</select>
+							<input id = "sexinput" type = "hidden" name = "sex" value = ""/>
+						</div>
+						<div class="mb-3">
+							<label for="interestSelect" class="form-label">Choose your interests</label>
+							<select id="interestSelect" class="form-select" required>
+								<option>Community Member</option>
+								<option>Beta Testing</option>
+								<option>Development</option>
+								<option>Collaborator</option>
+							</select>
+							<input id = "interestinput" type = "hidden" name = "interest" value = ""/>
+						</div>
+			     		<input type="submit" value = "Create User" name = "_create" onclick = "setData()"/>
+						<script type="text/javascript">
+							function setData() {
+								document.getElementById("sexinput").value = document.getElementById("sexSelect").value;
+								document.getElementById("interestinput").value = document.getElementById("interestSelect").value;
+							}
+						</script>
+		  			</form>
                 <?php } //end if 'create'
 				elseif (isset($_POST['read'])) { ?>
 					<form class = "flexcolumn form login padding1rem" method = "post" action = "gestor.php">
@@ -127,18 +127,107 @@
                         	<label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
 							<input id = "emailinput" type = "text" name = "email" value = "<?php echo $_POST['email']; ?>" readonly/>
 						</div>
-                        <?php echo $_POST['birthdate']; ?>
 						<div class="form__field">
-							<input id = "dateinput" type = "date" name = "birthday" value = "<?php echo $_POST['birthdate']; ?>" readonly/>
+							<label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>
+							<input id = "dateinput" type = "date" name = "birthday" value = "<?php echo $_POST['birthday']; ?>" readonly/>
 						</div>
 						<div class="form__field">
+							<label class = "asidelabel" for = "sexinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Sex</span></label>
 							<input id = "sexinput" type = "text" name = "sex" value = "<?php echo $_POST['sex']; ?>" readonly/>
 						</div>
 						<div class="form__field">
+							<label class = "asidelabel" for = "interestinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Interest</span></label>
 							<input id = "interestinput" type = "text" name = "interest" value = "<?php echo $_POST['interest']; ?>" readonly/>
 						</div>
 					</form>
                 <?php } //end if 'read'
+				elseif (isset($_POST['update'])) { ?>
+					<form class = "flexcolumn form login padding1rem" method = "post" action = "gestor.php">
+						<div class="form__field">
+                        	<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
+                       		<input id = "nameinput" type = "text" name = "name" placeholder = "Name" value = "<?php echo $_POST['name']; ?>" required/>
+                   		</div>
+						<div class="form__field">
+							<label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
+							<input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" value = "<?php echo $_POST['surname']; ?>" required/>
+						</div>
+						<div class="form__field">
+							<label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
+							<input id = "userinput" type = "text" name = "username" placeholder = "Username" value = "<?php echo $_POST['username']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
+							<input id = "passwordinput" type = "password" name = "password" placeholder = "Password" value = "<?php echo $_POST['password']; ?>" required/>
+						</div>
+						<div class="form__field">
+							<label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
+							<input id = "emailinput" type = "email" name = "email" placeholder = "Email" value = "<?php echo $_POST['email']; ?>" required/>
+						</div>
+						<div class="form__field">
+							<label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>
+							<input id = "dateinput" type = "date" name = "birthday" value = "<?php echo $_POST['birthday']; ?>" required/>
+						</div>
+						<div class="mb-3">
+							<label for="sexSelect" class="form-label">Choose your sex</label>
+							<select id="sexSelect" class="form-select" value = "<?php echo $_POST['sex']; ?>" required>
+								<option>Female</option>
+								<option>Male</option>
+								<option>Normal</option>
+							</select>
+							<input id = "sexinput" type = "hidden" name = "sex" value = ""/>
+						</div>
+						<div class="mb-3">
+							<label for="interestSelect" class="form-label">Choose your interests</label>
+							<select id="interestSelect" class="form-select" value = "<?php echo $_POST['interest']; ?>" required>
+								<option>Community Member</option>
+								<option>Beta Testing</option>
+								<option>Development</option>
+								<option>Collaborator</option>
+							</select>
+							<input id = "interestinput" type = "hidden" name = "interest" value = ""/>
+						</div>
+			     		<input type="submit" value = "Update User" name = "_update" onclick = "setData()"/>
+						<script type="text/javascript">
+							function setData() {
+								document.getElementById("sexinput").value = document.getElementById("sexSelect").value;
+								document.getElementById("interestinput").value = document.getElementById("interestSelect").value;
+							}
+						</script>
+		  			</form>
+                <?php } //end if 'update'
+				elseif (isset($_POST['delete'])) { ?>
+					<form class = "flexcolumn form login padding1rem" method = "post" action = "gestor.php">
+						<div class = "form__field">
+							<input id = "nameinput" type = "hidden" name = "name" value = "<?php echo $_POST['name']; ?>" readonly/>
+						</div>
+						<div class = "form__field">
+							<input id = "surnameinput" type = "hidden" name = "surname" value = "<?php echo $_POST['surname']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<input id = "userinput" type = "hidden" name = "username" value = "<?php echo $_POST['username']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<input id = "passwordinput" type = "hidden" name = "password" value = "<?php echo $_POST['password']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<input id = "emailinput" type = "hidden" name = "email" value = "<?php echo $_POST['email']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<input id = "dateinput" type = "hidden" name = "birthday" value = "<?php echo $_POST['birthday']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<input id = "sexinput" type = "hidden" name = "sex" value = "<?php echo $_POST['sex']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<input id = "interestinput" type = "hidden" name = "interest" value = "<?php echo $_POST['interest']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+                            <h1>ARE YOU SURE</h1>
+                            <p>This action is permanent, <?php echo $_POST['username']; ?> will be eliminated.</p>
+							<input class = "buttonG" type="submit" name = "_delete" value = "Delete User"/>
+						</div>
+					</form>
+                <?php } //end if 'delete'
 				else {
 					$server = "127.0.0.1";
 					$user = "root";
@@ -157,20 +246,38 @@
 						$birthdate = $_POST['birthday'];
 						$sex = $_POST['sex'];
 						$interests = $_POST['interest'];
-						$query = $connection->prepare("INSERT INTO users (name, surname, username, password, email, birthdate, sex, interests) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-						if (!$query) {
-							die("Preparation failed: " . $connection->error);
-						}
-						$query->bind_param("ssssssss", $name, $surname, $username, $password, $email, $birthdate, $sex, $interest);
-						if (!$query) {
-							die("Binding parameters failed: " . $query->error);
-						}
-						if ($query->execute()) {
-							$_SESSION['success'] = 'Insert complete! ' . $username . ' is done.';
-						}
-						else {
-							$_SESSION['warning'] = $connection->error;
-						}
+						if (isset($_POST['_create'])) {
+							$query = $connection->prepare("INSERT INTO users (name, surname, username, password, email, birthdate, sex, interests) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+							if (!$query) {
+								die("Preparation failed: " . $connection->error);
+							}
+							$query->bind_param("ssssssss", $name, $surname, $username, $password, $email, $birthdate, $sex, $interest);
+							if (!$query) {
+								die("Binding parameters failed: " . $query->error);
+							}
+							if ($query->execute()) {
+								$_SESSION['success'] = 'Insert complete! ' . $username . ' is done.';
+							}
+							else {
+								$_SESSION['warning'] = $connection->error;
+							}
+                        }
+						if (isset($_POST['_update'])) {
+							$query = $connection->prepare("UPDATE users SET name = ?, surname = ?, password = ?, email = ?, birthdate = ?, sex = ?, interests = ? WHERE username LIKE ?");
+							if (!$query) {
+								die("Preparation failed: " . $connection->error);
+							}
+							$query->bind_param("ssssssss", $name, $surname, $password, $email, $birthdate, $sex, $interest, $username);
+							if (!$query) {
+								die("Binding parameters failed: " . $query->error);
+							}
+							if ($query->execute()) {
+								$_SESSION['success'] = 'Update complete! ' . $username . ' is fixed.';
+							}
+							else {
+								$_SESSION['warning'] = $connection->error;
+							}
+                        }
 					}
 					if (isset($_SESSION['success'])) {
     	                echo '<div class="alert alert-success" role="alert">'.$_SESSION['success'].'</div>';
