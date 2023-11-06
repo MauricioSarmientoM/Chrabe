@@ -221,13 +221,46 @@
 						<div class="form__field">
 							<input id = "interestinput" type = "hidden" name = "interest" value = "<?php echo $_POST['interest']; ?>" readonly/>
 						</div>
-						<div class="form__field">
+						<div class="flexcolumn">
                             <h1>ARE YOU SURE</h1>
                             <p>This action is permanent, <?php echo $_POST['username']; ?> will be eliminated.</p>
 							<input class = "buttonG" type="submit" name = "_delete" value = "Delete User"/>
 						</div>
 					</form>
                 <?php } //end if 'delete'
+				elseif (isset($_POST['_delete'])) { ?>
+					<form class = "flexcolumn form login padding1rem" method = "post" action = "gestor.php">
+						<div class = "form__field">
+							<input id = "nameinput" type = "hidden" name = "name" value = "<?php echo $_POST['name']; ?>" readonly/>
+						</div>
+						<div class = "form__field">
+							<input id = "surnameinput" type = "hidden" name = "surname" value = "<?php echo $_POST['surname']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<input id = "userinput" type = "hidden" name = "username" value = "<?php echo $_POST['username']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<input id = "passwordinput" type = "hidden" name = "password" value = "<?php echo $_POST['password']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<input id = "emailinput" type = "hidden" name = "email" value = "<?php echo $_POST['email']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<input id = "dateinput" type = "hidden" name = "birthday" value = "<?php echo $_POST['birthday']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<input id = "sexinput" type = "hidden" name = "sex" value = "<?php echo $_POST['sex']; ?>" readonly/>
+						</div>
+						<div class="form__field">
+							<input id = "interestinput" type = "hidden" name = "interest" value = "<?php echo $_POST['interest']; ?>" readonly/>
+						</div>
+						<div class="flexcolumn">
+                            <h1>THERE IS NO TURN BACK</h1>
+                            <p>Will you eliminate <?php echo $_POST['username']; ?> Then?</p>
+							<input class = "buttonG" type="submit" name = "__delete" value = "Y E S"/>
+						</div>
+					</form>
+                <?php } //end if '_delete'
 				else {
 					$server = "127.0.0.1";
 					$user = "root";
@@ -278,7 +311,30 @@
 								$_SESSION['warning'] = $connection->error;
 							}
                         }
+						if (isset($_POST['__delete'])) {
+							$query = $connection->prepare("DELETE FROM users WHERE username LIKE ?");
+							if (!$query) {
+								die("Preparation failed: " . $connection->error);
+							}
+							$query->bind_param("s", $username);
+							if (!$query) {
+								die("Binding parameters failed: " . $query->error);
+							}
+							if ($query->execute()) {
+								$_SESSION['success'] = 'The user was deleted! ' . $username . ' is no more.';
+							}
+							else {
+								$_SESSION['warning'] = $connection->error;
+							}
+                        }
 					}
+					echo '<form class = "form login padding1rem search" method = "post" action = "gestor.php">';
+					echo '<div class="form__field">';
+					echo '<label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>';
+					echo '<input class = "" id = "nameinput" type = "text" name = "data" placeholder = "Filter by username here..." value = "' . $_POST['data'] . '"/>';
+					echo '<input type = "submit" name = "search" value = "Search"/>';
+					echo '</div>';
+					echo '</form>';
 					if (isset($_SESSION['success'])) {
     	                echo '<div class="alert alert-success" role="alert">'.$_SESSION['success'].'</div>';
 						unset($_SESSION['success']);
@@ -287,7 +343,12 @@
         	            echo '<div class="alert alert-warning" role="alert">'.$_SESSION['warning'].'</div>';
 						unset($_SESSION['warning']);
 					}
-					$query = "SELECT * FROM users";
+					if (isset($_POST['search'])) {
+						$query = "SELECT * FROM users WHERE username LIKE '%" . $_POST['data'] . "%'";
+					}
+					else {
+						$query = "SELECT * FROM users";
+					}
 					$result = $connection->query($query);
 					if ($result->num_rows > 0) {
 						while ($row = $result->fetch_assoc()) { ?>

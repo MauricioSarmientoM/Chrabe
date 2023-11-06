@@ -7,6 +7,9 @@
     display: flex;
     margin-bottom: .5rem;
 }
+.search {
+    margin-bottom: 2rem;
+}
 input {
   background-image: none;
   border: 0;
