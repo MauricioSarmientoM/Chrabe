@@ -284,7 +284,7 @@
 							if (!$query) {
 								die("Preparation failed: " . $connection->error);
 							}
-							$query->bind_param("ssssssss", $name, $surname, $username, $password, $email, $birthdate, $sex, $interest);
+							$query->bind_param("ssssssss", $name, $surname, $username, $password, $email, $birthdate, $sex, $interests);
 							if (!$query) {
 								die("Binding parameters failed: " . $query->error);
 							}
@@ -300,7 +300,7 @@
 							if (!$query) {
 								die("Preparation failed: " . $connection->error);
 							}
-							$query->bind_param("ssssssss", $name, $surname, $password, $email, $birthdate, $sex, $interest, $username);
+							$query->bind_param("ssssssss", $name, $surname, $password, $email, $birthdate, $sex, $interests, $username);
 							if (!$query) {
 								die("Binding parameters failed: " . $query->error);
 							}
