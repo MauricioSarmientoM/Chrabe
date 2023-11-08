@@ -56,20 +56,21 @@
     			<div class="modal-body">
 				<!-- https://enlear.academy/31-example-login-form-for-website-42abc6f6d525 -->
 				<div class="content">
-					<form action = "./scripts/login.php" method="post" class="form login">
+					<form method="post" class="form login">
                 				<div class="form__field">
 				    			<label class = "asidelabel" for="login__username"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
-                                    			<input autocomplete="username" id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
+                                    			<input autocomplete="username" id="login__username" type="text" name="username" class="form__input" placeholder="Username" required/>
                                 		</div>
               					<div class="form__field">
                                     			<label class = "asidelabel" for="login__password"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
-                                    			<input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
+                                    			<input id="login__password" type="password" name="password" class="form__input" placeholder="Password"/>
                                 		</div>
                                 		<div class="form__field">
-                                    			<input type="submit" value="Log In">
+                                    			<input type="submit" value="Log In" formaction = "./scripts/login.php"/>
                                 		</div>
-      					</form>
    					<p class="text--center">Not a member? <a href="signin.php"><i>Sign in now</i></a> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></p>
+                    <input type="submit" value="Forgot your password?" formaction = "recover.php">
+      					</form>
 				</div>
 			</div>
 		</div>
