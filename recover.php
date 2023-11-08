@@ -54,7 +54,7 @@
                 $charactersLength = strlen($characters);
                 $randomString = '';
                 for ($i = 0; $i < $length; $i++) {
-                    $randomString .= $characters[random_int(0, $charactersLength - 1)];
+                    $randomString = $characters[random_int(0, $charactersLength - 1)];
                 }
                 return $randomString;
             }
@@ -74,8 +74,17 @@
                     if ($result->num_rows > 0) {
                         $row = $result->fetch_assoc();
                         $subject = 'Password recovery';
-                        $message = 'You\'re recovering your password.\n\nIntroduce this code to recover your password:' . $newpass .'\nIf you didn\'t asked for a change, ignore this mail.';
+                        $message = 'Introduce this code to recover your password:' . $newpass .'\r\nIf you didn\'t asked for a change, ignore this mail.';
                         $headers = 'From: chromaber@gmail.com';
+                        ini_set( 'display_errors', 1 );
+                        error_reporting( E_ALL );
+                        $from = "test@hostinger-tutorials.com";
+                        $to = "test@hostinger.com";
+                        $subject = "Checking PHP mail";
+                        $message = "PHP mail works just fine";
+                        $headers = "From:" . $from;
+                        mail($to,$subject,$message, $headers);
+                        echo "The email message was sent.";
                         if (mail($row['email'], $subject, $message, $headers)) {
                             $_SESSION['newpass'] =  $newpass;
         ?>
