@@ -55,15 +55,15 @@
 					<form class = "flexcolumn form login padding1rem" method = "post" action = "gestor.php">
 						<div class="form__field">
                         	<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
-                       		<input id = "nameinput" type = "text" name = "name" placeholder = "Name" pattern="[a-zA-Z\u0400-\u04ff\s]{1,128}" title = "Only letters are allowed in names, and can't be longer than 128 characters" required/>
+                       		<input id = "nameinput" type = "text" name = "name" placeholder = "Name" pattern="[a-zA-Z\u0400-\u04ffÀ-ÿ\u00f1\u00d1\s]{1,128}" title = "Only letters are allowed in names, and can't be longer than 128 characters" required/>
                    		</div>
 						<div class="form__field">
 							<label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
-							<input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" pattern="[a-zA-Z\u0400-\u04ff\s]{1,128}" title = "Only letters are allowed in surnames, and can't be longer than 128 characters" required/>
+							<input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" pattern="[a-zA-Z\u0400-\u04ffÀ-ÿ\u00f1\u00d1\s]{1,128}" title = "Only letters are allowed in surnames, and can't be longer than 128 characters" required/>
 						</div>
 						<div class="form__field">
 							<label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
-							<input id = "userinput" type = "text" name = "username" placeholder = "Username" pattern=".{1,128}" title = "Can't be longer than 128 characters" required/>
+							<input id = "userinput" type = "text" name = "username" placeholder = "Username" pattern="[a-zA-Z0-9\u0400-\u04ffÀ-ÿ\u00f1\u00d1]{1,128}" title = "Can't be longer than 128 characters" required/>
 						</div>
 						<div class="form__field">
 							<label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
@@ -145,19 +145,19 @@
 					<form class = "flexcolumn form login padding1rem" method = "post" action = "gestor.php">
 						<div class="form__field">
                         	<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
-                       		<input id = "nameinput" type = "text" name = "name" placeholder = "Name" pattern="[a-zA-Z\u0400-\u04ff\s]{1,128}" title = "Only letters are allowed in names, and can't be longer than 128 characters" value = "<?php echo $_POST['name']; ?>" required/>
+                       		<input id = "nameinput" type = "text" name = "name" placeholder = "Name" pattern="[a-zA-Z\u0400-\u04ffÀ-ÿ\u00f1\u00d1\s]{1,128}" title = "Only letters are allowed in names, and can't be longer than 128 characters" value = "<?php echo $_POST['name']; ?>" required/>
                    		</div>
 						<div class="form__field">
 							<label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
-							<input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" pattern="[a-zA-Z\u0400-\u04ff\s]{1,128}" title = "Only letters are allowed in surnames, and can't be longer than 128 characters" value = "<?php echo $_POST['surname']; ?>" required/>
+							<input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" pattern="[a-zA-Z\u0400-\u04ffÀ-ÿ\u00f1\u00d1\s]{1,128}" title = "Only letters are allowed in surnames, and can't be longer than 128 characters" value = "<?php echo $_POST['surname']; ?>" required/>
 						</div>
 						<div class="form__field">
 							<label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
-							<input id = "userinput" type = "text" name = "username" placeholder = "Username" pattern=".{1,128}" title = "Can't be longer than 128 characters" value = "<?php echo $_POST['username']; ?>" readonly/>
+							<input id = "userinput" type = "text" name = "username" placeholder = "Username" pattern="[a-zA-Z0-9\u0400-\u04ffÀ-ÿ\u00f1\u00d1]{1,128}" title = "Can't be longer than 128 characters" value = "<?php echo $_POST['username']; ?>" readonly/>
 						</div>
 						<div class="form__field">
 							<label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
-							<input id = "passwordinput" type = "password" name = "password" placeholder = "Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,256}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required> value = "<?php echo $_POST['password']; ?>" required/>
+							<input id = "passwordinput" type = "password" name = "password" placeholder = "Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,256}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" value = "<?php echo $_POST['password']; ?>" required/>
 						</div>
 						<div class="form__field">
 							<label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
@@ -169,20 +169,35 @@
 						</div>
 						<div class="mb-3">
 							<label for="sexSelect" class="form-label">Choose your sex</label>
-							<select id="sexSelect" class="form-select" value = "<?php echo $_POST['sex']; ?>" required>
-								<option>Female</option>
-								<option>Male</option>
-								<option>Normal</option>
+							<select id="sexSelect" class="form-select" required>
+<?php
+// Assume you have retrieved options from the database in an array
+$options = array('Female', 'Male', 'Normal');
+$defaultOption = 2; // Set the default option value from the database
+foreach ($options as $value) {
+    echo '<option';
+    if ($value == $_POST['sex']) {
+        echo ' selected="selected"';
+    }
+    echo '>' . $value . '</option>';
+}
+?>
 							</select>
 							<input id = "sexinput" type = "hidden" name = "sex" value = ""/>
 						</div>
 						<div class="mb-3">
 							<label for="interestSelect" class="form-label">Choose your interests</label>
-							<select id="interestSelect" class="form-select" value = "<?php echo $_POST['interest']; ?>" required>
-								<option>Community Member</option>
-								<option>Beta Testing</option>
-								<option>Development</option>
-								<option>Collaborator</option>
+							<select id="interestSelect" class="form-select" value = "<?php echo $_POST['interest']; ?>" required><?php
+// Assume you have retrieved options from the database in an array
+$options = array('Community Member', 'Beta Testing', 'Development', 'Collaborator');
+foreach ($options as $value) {
+    echo '<option';
+    if ($value == $_POST['interest']) {
+        echo ' selected="selected"';
+    }
+    echo '>' . $value . '</option>';
+}
+?>
 							</select>
 							<input id = "interestinput" type = "hidden" name = "interest" value = ""/>
 						</div>
