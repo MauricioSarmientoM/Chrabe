@@ -22,7 +22,7 @@
 		if (!$query) {
 			die("Preparation failed: " . $connection->error);
 		}
-		$query->bind_param("ssssssss", $name, $surname, $username, $password, $email, $birthdate, $sex, $interests);
+		$query->bind_param("ssssssss", $name, $surname, $username, password_hash($password), $email, $birthdate, $sex, $interests);
 		if (!$query) {
 			die("Binding parameters failed: " . $query->error);
 		}
@@ -30,7 +30,6 @@
 			$_SESSION["name"] = $name;
 			$_SESSION["surname"] = $surname;
 			$_SESSION["username"] = $username;
-			$_SESSION["password"] = $password;
 			$_SESSION["email"] = $email;
 			$_SESSION["birthdate"] = $birthdate;
 			$_SESSION["sex"] = $sex;

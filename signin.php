@@ -55,23 +55,23 @@
 				<form class = "flexcolumn form login padding1rem" method = "post" action = "./scripts/insert.php">
 						<div class="form__field">
                         	<label class = "asidelabel" for = "nameinput"><svg class="icon"><use xlink:href="#icon-half"></use></svg><span class="hidden">Name</span></label>
-                       		<input id = "nameinput" type = "text" name = "name" placeholder = "Name" pattern="[a-zA-Z\u0400-\u04ffÀ-ÿ\u00f1\u00d1\s]{1,128}" title = "Only letters are allowed in names, and can't be longer than 128 characters" required/>
+                       		<input id = "nameinput" type = "text" name = "name" placeholder = "Name" pattern="^[a-zA-Z\u00C0-\u00FF\u0400-\u04FF\s]{1,128}$" title = "Only letters are allowed in names, and can't be longer than 128 characters" required/>
                    		</div>
 						<div class="form__field">
 							<label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
-							<input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" pattern="[a-zA-Z\u0400-\u04ffÀ-ÿ\u00f1\u00d1\s]{1,128}" title = "Only letters are allowed in surnames, and can't be longer than 128 characters" required/>
+							<input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" pattern="^[a-zA-Z\u00C0-\u00FF\u0400-\u04FF\s]{1,128}$" title = "Only letters are allowed in surnames, and can't be longer than 128 characters" required/>
 						</div>
 						<div class="form__field">
 							<label class = "asidelabel" for = "userinput"><svg class="icon"><use xlink:href="#icon-user"></use></svg><span class="hidden">Username</span></label>
-							<input id = "userinput" type = "text" name = "username" placeholder = "Username" pattern="[a-zA-Z0-9\u0400-\u04ffÀ-ÿ\u00f1\u00d1]{1,128}" title = "Can't be longer than 128 characters" required/>
+							<input id = "userinput" type = "text" name = "username" placeholder = "Username" pattern="^[a-zA-Z0-9\u00C0-\u00FF\u0400-\u04FF\u00F1\u00D1]{1,128}$" title = "Can't contain whitespaces or be longer than 128 characters" required/>
 						</div>
 						<div class="form__field">
 							<label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
-							<input id = "passwordinput" type = "password" name = "password" placeholder = "Password" placeholder = "Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\u0400-\u04ff]).{8,256}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+							<input id = "passwordinput" type = "password" name = "password" placeholder = "Password" placeholder = "Password" pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,256}$" title="Must contain at least one number and one uppercase, one special character !@#$%^&*, and at least 8 more characters" required/>
 						</div>
 						<div class="form__field">
 							<label class = "asidelabel" for = "emailinput"><svg class="icon"><use xlink:href="#icon-letter"></use></svg><span class="hidden">Email</span></label>
-							<input id = "emailinput" type = "email" name = "email" placeholder = "Email" pattern=".{1,128}" title = "Can't be longer than 128 characters" required/>
+							<input id = "emailinput" type = "email" name = "email" placeholder = "Email" required/>
 						</div>
         	            		<div class="form__field">
                 	        		<label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>

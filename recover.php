@@ -68,7 +68,7 @@
                     die("Connection failed: " . $connection->connect_error);
                 }
                 else {
-                    $query = "SELECT email FROM users WHERE username LIKE '" . $_POST['username'] . "'";
+                    $query = "SELECT * FROM users WHERE username LIKE '" . $_POST['username'] . "'";
                     $result = $connection->query($query);
                     $newpass = generateRandomString();
                     if ($result->num_rows > 0) {
@@ -79,7 +79,7 @@
                         ini_set( 'display_errors', 1 );
                         error_reporting( E_ALL );
                         $from = "test@hostinger-tutorials.com";
-                        $to = "test@hostinger.com";
+                        $to = "celestemarmar2@gmail.com";
                         $subject = "Checking PHP mail";
                         $message = "PHP mail works just fine";
                         $headers = "From:" . $from;
