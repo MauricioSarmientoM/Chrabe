@@ -45,23 +45,36 @@
                 echo '<div class="alert alert-warning" role="alert">'.$_SESSION['warning'].'</div>';
                 unset($_SESSION['warning']);
             }
-            if (isset($_SESSION['changed'])) {
-                $query = $connection->prepare("UPDATE users password = ? WHERE username LIKE ?");
-                if (!$query) {
-                    die("Preparation failed: " . $connection->error);
-                }
-                $query->bind_param("ss", password_hash($_POST['password']), $_SESSION['Recusername']);
-                if (!$query) {
-                    die("Binding parameters failed: " . $query->error);
-                }
-                if ($query->execute()) {
-                    $_SESSION['success'] = 'Password changed.';
+            if (isset($_POST['changed'])) {
+                echo 'flag1';
+                $server = "127.0.0.1";
+                $user = "root";
+                $pass = "";
+                $db = "chrabe";
+                $connection = new mysqli($server, $user, $pass, $db);
+                if ($connection->connect_error) {
+                    die("Connection failed: " . $connection->connect_error);
                 }
                 else {
-                    $_SESSION['warning'] = $connection->error;
+                    echo 'flag2';
+                    $query = $connection->prepare("UPDATE users password = ? WHERE username LIKE ?");
+                    if (!$query) {
+                        die("Preparation failed: " . $connection->error);
+                    }
+                    echo $_POST['password'];
+                    $query->bind_param("ss", password_hash($_POST['password']), $_SESSION['Recusername']);
+                    if (!$query) {
+                        die("Binding parameters failed: " . $query->error);
+                    }
+                    if ($query->execute()) {
+                        echo '<div class="alert alert-success" role="alert">Password changed.</div>';
+                    }
+                    else {
+                        echo '<div class="alert alert-warning" role="alert">' . $connection->error . '</div>';
+                    }
+                    unset($_SESSION['changed']);
+                    unset($_SESSION['Recusername']);
                 }
-                unset($_SESSION['changed']);
-                unset($_SESSION['Recusername']);
             }
             else if (isset($_POST['surname']) && isset($_POST['birthday'])) {
                 if ($_SESSION['surname'] == $_POST['surname'] && $_SESSION['birthdate'] == $_POST['birthday']) {
@@ -126,6 +139,9 @@
                             echo '<div class="alert alert-warning" role="alert">The recovery has failed.</div>';
                         }
                     }
+                }
+                else {
+                    echo '<div class="alert alert-warning" role="alert">The recovery has failed.</div>';
                 }
             }
             ?>
