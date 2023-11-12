@@ -50,16 +50,18 @@
                 if (!$query) {
                     die("Preparation failed: " . $connection->error);
                 }
-                $query->bind_param("ss", $_POST['birthday'], $_SESSION['username']);
+                $query->bind_param("ss", $_POST['birthday'], $_SESSION['Recusername']);
                 if (!$query) {
                     die("Binding parameters failed: " . $query->error);
                 }
                 if ($query->execute()) {
-                    $_SESSION['success'] = 'Update complete! ' . $username . ' is fixed.';
+                    $_SESSION['success'] = 'Password changed.';
                 }
                 else {
                     $_SESSION['warning'] = $connection->error;
                 }
+                unset($_SESSION['changed']);
+                unset($_SESSION['Recusername']);
             }
             else if (isset($_POST['surname']) && isset($_POST['birthday'])) {
                 if ($_SESSION['surname'] == $_POST['surname'] && $_SESSION['birthdate'] == $_POST['birthday']) {
@@ -68,12 +70,10 @@
             ?>
             <div class = "content">
                 <form class = "flexcolumn form login padding1rem" method = "post" action = "./recover.php">
+                    <p>Choose a new password.</p>
                     <div class="form__field">
-                        <p>Choose a new password.</p>
-                        <div class="form__field">
-                            <label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
-                            <input id = "passwordinput" type = "password" name = "password" placeholder = "Password" placeholder = "Password" pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,256}$" title="Must contain at least one number and one uppercase, one special character !@#$%^&*, and at least 8 more characters" required/>
-                        </div>
+                        <label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
+                        <input id = "passwordinput" type = "password" name = "password" placeholder = "Password" placeholder = "Password" pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,256}$" title="Must contain at least one number and one uppercase, one special character !@#$%^&*, and at least 8 more characters" required/>
                     </div>
                     <div class="form__field">
                         <input type="submit" name = "changed" value="Recover"/>
@@ -81,9 +81,9 @@
                 </form>
             </div>
             <?php
-                    else {
-                            echo '<div class="alert alert-warning" role="alert">The recovery has failed.</div>';
-                    }
+                }
+                else {
+                    echo '<div class="alert alert-warning" role="alert">The recovery has failed.</div>';
                 }
             }
             else {
@@ -101,22 +101,20 @@
                         $result = $connection->query($query);
                         if ($result->num_rows > 0) {
                             $row = $result->fetch_assoc();
-                            $_SESSION['username'] = $row['username'];
+                            $_SESSION['Recusername'] = $row['username'];
                             $_SESSION['surname'] = $row['surname'];
                             $_SESSION['birthdate'] = $row['birthdate'];
             ?>
             <div class = "content">
                 <form class = "flexcolumn form login padding1rem" method = "post" action = "./recover.php">
+                    <p>Introduce your surname, and birthdate to continue.</p>
                     <div class="form__field">
-                        <p>Introduce your surname, and birthdate to continue.</p>
-                        <div class="form__field">
-                            <label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
-                            <input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" required/>
-                        </div>
-                        <div class="form__field">
-                            <label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>
-                            <input id = "dateinput" type = "date" name = "birthday" required/>
-                        </div>
+                        <label class = "asidelabel" for = "surnameinput"><svg class="icon rotate180"><use xlink:href="#icon-half"></use></svg><span class="hidden">Surname</span></label>
+                        <input id = "surnameinput" type = "text" name = "surname" placeholder = "Surname" required/>
+                    </div>
+                    <div class="form__field">
+                        <label class = "asidelabel" for = "dateinput"><svg class="icon"><use xlink:href="#icon-cake"></use></svg><span class="hidden">Birthdate</span></label>
+                        <input id = "dateinput" type = "date" name = "birthday" required/>
                     </div>
                     <div class="form__field">
                         <input type="submit" value="Recover"/>
@@ -127,10 +125,6 @@
                         } else {
                             echo '<div class="alert alert-warning" role="alert">The recovery has failed.</div>';
                         }
-                    }
-                    else {
-                        echo '<div class="alert alert-warning" role="alert">Invalid username.</div>';
-                        echo '<p>The username introduced haven\'t found in database, try again.';
                     }
                 }
             }
