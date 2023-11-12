@@ -50,7 +50,7 @@
                 if (!$query) {
                     die("Preparation failed: " . $connection->error);
                 }
-                $query->bind_param("ss", $_POST['birthday'], $_SESSION['Recusername']);
+                $query->bind_param("ss", password_hash($_POST['password']), $_SESSION['Recusername']);
                 if (!$query) {
                     die("Binding parameters failed: " . $query->error);
                 }
