@@ -299,7 +299,7 @@ foreach ($options as $value) {
 							if (!$query) {
 								die("Preparation failed: " . $connection->error);
 							}
-							$query->bind_param("ssssssss", $name, $surname, $username, $password, $email, $birthdate, $sex, $interests);
+							$query->bind_param("ssssssss", $name, $surname, $username, password_hash($password, PASSWORD_BCRYPT), $email, $birthdate, $sex, $interests);
 							if (!$query) {
 								die("Binding parameters failed: " . $query->error);
 							}
@@ -315,7 +315,7 @@ foreach ($options as $value) {
 							if (!$query) {
 								die("Preparation failed: " . $connection->error);
 							}
-							$query->bind_param("ssssssss", $name, $surname, $password, $email, $birthdate, $sex, $interests, $username);
+							$query->bind_param("ssssssss", $name, $surname, password_hash($password, PASSWORD_BCRYPT), $email, $birthdate, $sex, $interests, $username);
 							if (!$query) {
 								die("Binding parameters failed: " . $query->error);
 							}

@@ -13,7 +13,7 @@
 		$password = $_POST['password'];
 		// Use a prepared statement to prevent SQL injection
         $query = $connection->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
-        $query->bind_param("ss", $username, password_hash($password));
+        $query->bind_param("ss", $username, password_hash($password, PASSWORD_BCRYPT));
         $query->execute();
 
         $result = $query->get_result();

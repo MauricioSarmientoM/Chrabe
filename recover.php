@@ -46,7 +46,6 @@
                 unset($_SESSION['warning']);
             }
             if (isset($_POST['changed'])) {
-                echo 'flag1';
                 $server = "127.0.0.1";
                 $user = "root";
                 $pass = "";
@@ -56,13 +55,11 @@
                     die("Connection failed: " . $connection->connect_error);
                 }
                 else {
-                    echo 'flag2';
-                    $query = $connection->prepare("UPDATE users password = ? WHERE username LIKE ?");
+                    $query = $connection->prepare("UPDATE users SET password = ? WHERE username LIKE ?");
                     if (!$query) {
                         die("Preparation failed: " . $connection->error);
                     }
-                    echo $_POST['password'];
-                    $query->bind_param("ss", password_hash($_POST['password']), $_SESSION['Recusername']);
+                    $query->bind_param("ss", password_hash($_POST['password'], PASSWORD_BCRYPT), $_SESSION['Recusername']);
                     if (!$query) {
                         die("Binding parameters failed: " . $query->error);
                     }
