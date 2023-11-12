@@ -46,7 +46,45 @@
                 unset($_SESSION['warning']);
             }
             if (isset($_SESSION['changed'])) {
-                echo 'aaa';
+                $query = $connection->prepare("UPDATE users password = ? WHERE username LIKE ?");
+                if (!$query) {
+                    die("Preparation failed: " . $connection->error);
+                }
+                $query->bind_param("ss", $_POST['birthday'], $_SESSION['username']);
+                if (!$query) {
+                    die("Binding parameters failed: " . $query->error);
+                }
+                if ($query->execute()) {
+                    $_SESSION['success'] = 'Update complete! ' . $username . ' is fixed.';
+                }
+                else {
+                    $_SESSION['warning'] = $connection->error;
+                }
+            }
+            else if (isset($_POST['surname']) && isset($_POST['birthday'])) {
+                if ($_SESSION['surname'] == $_POST['surname'] && $_SESSION['birthdate'] == $_POST['birthday']) {
+                    unset($_SESSION['surname']);
+                    unset($_SESSION['birthdate']);
+            ?>
+            <div class = "content">
+                <form class = "flexcolumn form login padding1rem" method = "post" action = "./recover.php">
+                    <div class="form__field">
+                        <p>Choose a new password.</p>
+                        <div class="form__field">
+                            <label class = "asidelabel" for = "passwordinput"><svg class="icon"><use xlink:href="#icon-lock"></use></svg><span class="hidden">Password</span></label>
+                            <input id = "passwordinput" type = "password" name = "password" placeholder = "Password" placeholder = "Password" pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,256}$" title="Must contain at least one number and one uppercase, one special character !@#$%^&*, and at least 8 more characters" required/>
+                        </div>
+                    </div>
+                    <div class="form__field">
+                        <input type="submit" name = "changed" value="Recover"/>
+                    </div>
+                </form>
+            </div>
+            <?php
+                    else {
+                            echo '<div class="alert alert-warning" role="alert">The recovery has failed.</div>';
+                    }
+                }
             }
             else {
                 if (isset($_POST['username'])){
@@ -63,8 +101,9 @@
                         $result = $connection->query($query);
                         if ($result->num_rows > 0) {
                             $row = $result->fetch_assoc();
-                            $_SESSION['recSurname'] = $row['surname'];
-                            $_SESSION['recBirthdate'] = $row['birthdate']
+                            $_SESSION['username'] = $row['username'];
+                            $_SESSION['surname'] = $row['surname'];
+                            $_SESSION['birthdate'] = $row['birthdate'];
             ?>
             <div class = "content">
                 <form class = "flexcolumn form login padding1rem" method = "post" action = "./recover.php">
