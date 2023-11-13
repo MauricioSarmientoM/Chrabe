@@ -1,4 +1,7 @@
 *.tar.gz
 *.txt
 *.map
-tech-blog
+*.sql
+*.py
+node_modules
+bun.lockb
