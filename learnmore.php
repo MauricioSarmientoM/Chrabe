@@ -93,7 +93,7 @@
                     			</div>
                 		</div>
             		</div>
-            		<div class = "content width100 flexrow transBG boxShadow">
+            		<!--div class = "content width100 flexrow transBG boxShadow">
                 		<p class = "padding4rem">
                     			Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a fermentum nibh. Donec ac sapien et velit consectetur viverra nec non est. Donec ac orci at neque malesuada eleifend in non tellus. Ut ultricies pretium dolor ornare dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a eros ut magna blandit semper. Praesent non justo a ante eleifend porta eu ornare ipsum. Integer a eros quis felis porttitor egestas vitae nec elit. Praesent et enim eleifend, euismod elit a, malesuada dui. Nam et luctus magna. Duis ut risus est.
                 		</p>
@@ -107,7 +107,7 @@
                 		<image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
                 		<image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
                 		<image class = "img marginleftauto marginrightauto padding1rem" src = "./src/pixiv.png"/>
-            		</div>
+            		</div-->
         	</main>
 		<?php include "./scripts/footer.php"?>
 	</body>
