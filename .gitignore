@@ -1,7 +1,5 @@
 *.tar.gz
 *.txt
 *.map
-*.sql
-*.py
 node_modules
 bun.lockb
